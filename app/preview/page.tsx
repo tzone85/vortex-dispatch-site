@@ -22,6 +22,13 @@ const options = [
     blurb: "High-contrast mono + acid lime — brutalist clarity, fast scan for technical buyers.",
     tone: "Preview",
   },
+  {
+    id: "LIVE",
+    name: "Interactive motion demos",
+    href: "/preview/live",
+    blurb: "Lightweight mouse-reactive fields: vortex particles, dispatch graph, capability orbit.",
+    tone: "Live canvas/CSS",
+  },
 ] as const;
 
 export default function PreviewIndexPage() {
