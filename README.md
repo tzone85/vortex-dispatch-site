@@ -61,10 +61,18 @@ Git integration is already configured (`vercel git connect` → `tzone85/vortex-
 
 1. Push to `main` for production (or open a PR for a preview URL).
 2. Framework preset: **Next.js** (see `vercel.json`).
-3. Set env var when the apex domain is ready:
-   - `NEXT_PUBLIC_SITE_URL=https://vortexdispatch.co.za` (or your final domain)
-4. Attach the custom domain in the Vercel project → Domains. DNS can stay at your registrar (xneelo): add the records Vercel shows (usually A / `cname.vercel-dns.com`).
-5. Domain provisioning can take time; the `*.vercel.app` URL is enough until DNS propagates.
+3. **Production env (already set):** `NEXT_PUBLIC_SITE_URL=https://vortexdispatch.co.za`
+4. **Custom domains (already attached on Vercel):** `vortexdispatch.co.za` + `www` (www → apex 308).
+5. **DNS at xneelo (konsoleH)** — keep nameservers on host-h / dns-h so mail can stay put. Update zone records:
+
+| Host | Type | Value |
+|---|---|---|
+| `@` (apex) | **A** | `76.76.21.21` (and/or `216.198.79.1` / `64.29.17.1` if Vercel lists them) |
+| `www` | **CNAME** | `5546f580c9809447.vercel-dns-017.com.` |
+
+Remove the old parking **A** `41.203.18.177`. Do **not** point MX away if you use xneelo mail.
+
+Verify: `vercel domains verify vortexdispatch.co.za` then open https://vortexdispatch.co.za
 
 Manual CLI deploy still works: `vercel --prod` from this directory.
 
