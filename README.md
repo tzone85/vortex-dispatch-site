@@ -51,17 +51,22 @@ npm run build && npm start
 
 ## Live deployment
 
+- **GitHub:** https://github.com/tzone85/vortex-dispatch-site
 - **Production (Vercel):** https://vortex-dispatch-site.vercel.app
-- Project: `vortex-dispatch-site` under your Vercel team
+- **Auto-deploy:** Vercel project `vortex-dispatch-site` is linked to this repo. Pushes to `main` deploy **Production**; other branches get Preview deployments.
 
 ## Deploy on Vercel
 
-1. From this folder: `vercel` (link) then `vercel --prod` when authenticated — already done for the URL above.
+Git integration is already configured (`vercel git connect` → `tzone85/vortex-dispatch-site`, production branch `main`).
+
+1. Push to `main` for production (or open a PR for a preview URL).
 2. Framework preset: **Next.js** (see `vercel.json`).
 3. Set env var when the apex domain is ready:
    - `NEXT_PUBLIC_SITE_URL=https://vortexdispatch.co.za` (or your final domain)
 4. Attach the custom domain in the Vercel project → Domains. DNS can stay at your registrar (xneelo): add the records Vercel shows (usually A / `cname.vercel-dns.com`).
 5. Domain provisioning can take time; the `*.vercel.app` URL is enough until DNS propagates.
+
+Manual CLI deploy still works: `vercel --prod` from this directory.
 
 No backend is required for contact: CTAs use `mailto:hello@vortexdispatch.co.za`. Point that mailbox (or a forwarder) once mail DNS is configured.
 
