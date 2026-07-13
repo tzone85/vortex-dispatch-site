@@ -1,87 +1,86 @@
-# Vortex Dispatch — company website
+# Vortex Dispatch — company site
 
-Flagship marketing site for **Vortex Dispatch**, a commercial software studio that designs, builds, and ships product-grade software for businesses.
+The flagship one-page site for **Vortex Dispatch**, a commercial software studio.
+A "night observatory" aesthetic: near-black obsidian, warm parchment ink, a
+molten-copper accent, and a single cold signal-teal reserved for live states.
+No purple, no neon, no system fonts.
 
-This package is **separate** from the Go VXD CLI at `../vortex-dispatch/`. The CLI may appear as a delivery capability; this site presents the company to prospective clients.
+- **Production:** https://vortexdispatch.co.za (+ `www`)
+- **Host:** Vercel project `vortex-dispatch-site` (Git-integrated, branch `main`)
+- **DNS:** xneelo (nameservers kept on host-h for mail); apex + `www` A-records → Vercel
 
 ## Stack
 
-- Next.js 16 (App Router) + React 19
-- TypeScript (strict)
-- Tailwind CSS v4
-- Vitest for pure domain / SEO unit tests
-- Deploy target: **Vercel**
+- **Vite 7 + React 19 + TypeScript** (strict)
+- **Tailwind CSS v4** (`@tailwindcss/vite`), design-token layer in `src/index.css`
+- **Vitest** for the pure domain + geometry
+- Type: Bricolage Grotesque (display) · Instrument Serif (accent) · Hanken Grotesk (body) · JetBrains Mono (technical)
 
-## Project layout
-
-```
-app/                 Pages, layout, robots, sitemap, OG image
-components/          Section UI (Nav, Hero, Services, Work, Process, Contact, Footer)
-core/                Pure content & SEO domain (unit-tested)
-  company.ts
-  services.ts
-  portfolio.ts
-  process.ts
-  seo.ts
-  __tests__/
-public/              Static assets (favicon)
-```
-
-Content and SEO helpers live in `core/` with no framework I/O so they stay unit-testable (SOLID-friendly wiring: pages compose, domain owns data).
-
-## Develop
+## Run locally
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
-npm test             # Vitest domain suite
-npm run typecheck
-npm run build && npm start
+npm run dev        # http://localhost:5173
+npm test           # 29 unit tests — domain + SVG geometry
+npm run typecheck  # strict, no errors
+npm run build      # tsc --noEmit && vite build  ->  dist/
 ```
+
+## Deploy
+
+Vercel is Git-integrated: **push to `main` → production deploy**, other branches → preview.
+Framework is pinned to Vite in `vercel.json` (`framework: "vite"`, output `dist/`).
+No env vars required — `core/company.ts` hard-codes the canonical `siteUrl`.
+
+The custom domain is already attached to the project and resolves via xneelo DNS,
+so a production deploy serves `vortexdispatch.co.za` automatically — no DNS changes.
+
+## Architecture (SOLID: domain owns data, components render it)
+
+```
+src/
+  core/                 pure, framework-free domain — unit-tested, no React/DOM
+    company · capabilities · work · process · principles · seo · geometry · types
+    __tests__/          geometry / content / seo suites (29 tests)
+  components/
+    interactive/
+      VortexField.tsx   signature hero vortex (SVG, driven by tested geometry)
+      Starfield.tsx     deterministic seeded starfield
+    Nav · Hero · SignalStrip · Capabilities · Work
+    Process.tsx         hand-built SVG dispatch-pipeline diagram (no mermaid)
+    Ethos · Contact · Footer · SectionHead · Reveal · JsonLd
+    hooks.ts            useReveal (IntersectionObserver) + usePrefersReducedMotion
+  App.tsx               composition only — a table of contents
+  main.tsx              React entry
+```
+
+Every visual (vortex arcs, pipeline conduit, JSON-LD, all copy) is generated from
+pure functions and data in `core/`. That is why 29 tests run in ~8ms with no DOM,
+and the UI can be restyled without touching a single assertion.
+
+## Diagrams (hand-authored SVG, no mermaid)
+
+- **Hero vortex** — logarithmic-spiral arcs (`vortexArcs`) drawing inward to a bright
+  core, with dispatched signal dots on a counter-rotating orbit.
+- **Dispatch pipeline** — nodes laid out by `pipelineLayout`, joined by `pipelinePath`,
+  with `dispatchDots` riding the path via SMIL `animateMotion`.
+
+## Accessibility & motion
+
+`prefers-reduced-motion` disables the vortex spin, travelling dots, and reveals.
+Skip link, focus-visible rings, `aria-label`s on the decorative SVGs.
 
 ## Content edits
 
 | Change | File |
 |---|---|
-| Positioning, email, hero copy | `core/company.ts` |
-| Service cards | `core/services.ts` |
-| Portfolio / proof items | `core/portfolio.ts` |
-| Process steps | `core/process.ts` |
-| SEO builders | `core/seo.ts` |
+| Positioning, hero copy, email | `core/company.ts` |
+| Service cards | `core/capabilities.ts` |
+| Portfolio | `core/work.ts` |
+| Build stages | `core/process.ts` |
+| Ethos statements | `core/principles.ts` |
 
-## Live deployment
+## No backend (intentional)
 
-- **GitHub:** https://github.com/tzone85/vortex-dispatch-site
-- **Production (Vercel):** https://vortex-dispatch-site.vercel.app
-- **Auto-deploy:** Vercel project `vortex-dispatch-site` is linked to this repo. Pushes to `main` deploy **Production**; other branches get Preview deployments.
-
-## Deploy on Vercel
-
-Git integration is already configured (`vercel git connect` → `tzone85/vortex-dispatch-site`, production branch `main`).
-
-1. Push to `main` for production (or open a PR for a preview URL).
-2. Framework preset: **Next.js** (see `vercel.json`).
-3. **Production env (already set):** `NEXT_PUBLIC_SITE_URL=https://vortexdispatch.co.za`
-4. **Custom domains (already attached on Vercel):** `vortexdispatch.co.za` + `www` (www → apex 308).
-5. **DNS at xneelo (konsoleH)** — keep nameservers on host-h / dns-h so mail can stay put. Update zone records:
-
-| Host | Type | Value |
-|---|---|---|
-| `@` (apex) | **A** | `76.76.21.21` (and/or `216.198.79.1` / `64.29.17.1` if Vercel lists them) |
-| `www` | **CNAME** | `5546f580c9809447.vercel-dns-017.com.` |
-
-Remove the old parking **A** `41.203.18.177`. Do **not** point MX away if you use xneelo mail.
-
-Verify: `vercel domains verify vortexdispatch.co.za` then open https://vortexdispatch.co.za
-
-Manual CLI deploy still works: `vercel --prod` from this directory.
-
-No backend is required for contact: CTAs use `mailto:hello@vortexdispatch.co.za`. Point that mailbox (or a forwarder) once mail DNS is configured.
-
-## Verification
-
-```bash
-npm test
-npm run build
-npm start   # then curl http://localhost:3000 and assert brand + hero copy
-```
+Static single page. Contact is a `mailto:` to `hello@vortexdispatch.co.za` — point
+that mailbox (or a forwarder) at xneelo mail.
