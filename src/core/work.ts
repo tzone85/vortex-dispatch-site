@@ -47,14 +47,15 @@ export const work: readonly WorkItem[] = [
     status: "live",
   },
   {
-    id: "songsmith",
-    name: "SongSmith",
-    domain: "consumer",
-    year: 2025,
+    id: "nexus-dispatch",
+    name: "Nexus Dispatch",
+    domain: "ai-delivery",
+    year: 2026,
     summary:
-      "A browser text-to-song generator — nine genres of procedural Web Audio, exporting to WAV and shareable video, no server round-trip.",
-    stack: ["Web Audio", "React", "Canvas"],
+      "Offline-first AI agent orchestration — hand off a requirement and it decomposes, dispatches parallel local-LLM agents, reviews, QAs, and merges. No API keys, no cloud.",
+    stack: ["Go", "Local LLMs", "Ollama"],
     status: "live",
+    href: "https://github.com/tzone85/nexus-dispatch",
   },
   {
     id: "vxd",
