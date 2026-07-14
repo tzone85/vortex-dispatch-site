@@ -25,6 +25,7 @@ export const work: readonly WorkItem[] = [
       "A same-shift staffing marketplace for restaurants — venues post gaps, vetted staff claim them, and the schedule fills itself.",
     stack: ["React", "Vite", "PWA"],
     status: "live",
+    href: "https://shiftsavvy-plum.vercel.app",
   },
   {
     id: "popiapaper",
@@ -35,6 +36,7 @@ export const work: readonly WorkItem[] = [
       "A generated POPIA compliance pack — policies and registers assembled from a business's real answers, ready to sign.",
     stack: ["Next.js", "Document engine"],
     status: "live",
+    href: "https://popiapaper.vercel.app",
   },
   {
     id: "returnready",
@@ -45,6 +47,7 @@ export const work: readonly WorkItem[] = [
       "A filing-season co-pilot for SARS tax returns — a client-side rules engine that walks people through their submission, privately.",
     stack: ["React", "Vite", "Rules engine"],
     status: "live",
+    href: "https://returnready-black.vercel.app",
   },
   {
     id: "nexus-dispatch",
