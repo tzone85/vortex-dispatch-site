@@ -25,7 +25,7 @@ export const work: readonly WorkItem[] = [
       "A same-shift staffing marketplace for restaurants — venues post gaps, vetted staff claim them, and the schedule fills itself.",
     stack: ["React", "Vite", "PWA"],
     status: "live",
-    href: "https://shiftsavvy-plum.vercel.app",
+    href: "https://shiftsavvy.co.za",
   },
   {
     id: "popiapaper",
