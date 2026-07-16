@@ -1,0 +1,35 @@
+# Allow all crawlers, including AI agents
+User-agent: *
+Allow: /
+Disallow: /dist/
+
+# AI Agent Indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemaps
+Sitemap: https://vortexdispatch.co.za/sitemap.xml
+
+# Crawl delay (in seconds) - 1 second to be respectful
+Crawl-delay: 1

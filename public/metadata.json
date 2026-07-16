@@ -1,0 +1,142 @@
+{
+  "organization": {
+    "name": "Vortex Dispatch",
+    "tagline": "Commercial software, engineered to run.",
+    "description": "A commercial software studio. We design, build, and ship product-grade systems — marketplaces, booking platforms, compliance tooling, and AI-assisted delivery — then stay to keep them running.",
+    "positioning": "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
+    "location": "Cape Town, South Africa",
+    "country": "ZA",
+    "founded": 2024,
+    "email": "hello@vortexdispatch.co.za",
+    "website": "https://vortexdispatch.co.za",
+    "social": {
+      "github": "https://github.com/tzone85",
+      "github_org": "https://github.com/vortex-dispatch"
+    }
+  },
+  "services": {
+    "categories": [
+      "Software Development",
+      "Marketplace Development",
+      "Booking Platform Development",
+      "Compliance Tool Development",
+      "AI Integration",
+      "SaaS Development",
+      "Technical Consulting"
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "Vite",
+      "Laravel",
+      "Go",
+      "TypeScript",
+      "Python",
+      "AWS",
+      "Vercel",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "specializations": [
+      "Product Architecture",
+      "Test-Driven Development",
+      "AI-Assisted Delivery",
+      "Performance Optimization",
+      "Security Implementation",
+      "Compliance Solutions"
+    ]
+  },
+  "portfolio": [
+    {
+      "id": "mini-suites",
+      "name": "Mini Suites",
+      "domain": "booking",
+      "year": 2025,
+      "description": "A booking platform for a luxury short-stay rental — real-time availability, secure deposits, and iCal sync with the big channels.",
+      "status": "live",
+      "url": "https://minisuites.co.za",
+      "stack": ["Laravel", "Paystack", "Laravel Cloud"]
+    },
+    {
+      "id": "shiftsavvy",
+      "name": "ShiftSavvy",
+      "domain": "marketplace",
+      "year": 2025,
+      "description": "A same-shift staffing marketplace for restaurants — venues post gaps, vetted staff claim them, and the schedule fills itself.",
+      "status": "live",
+      "url": "https://shiftsavvy.co.za",
+      "stack": ["React", "Vite", "PWA"]
+    },
+    {
+      "id": "foundersdesk",
+      "name": "FoundersDesk",
+      "domain": "consumer",
+      "year": 2025,
+      "description": "A resource platform for founders — tools, guides, and intelligence to navigate the early stage journey.",
+      "status": "live",
+      "url": "https://foundersdesk.co.za",
+      "stack": ["React", "Vite", "Next.js"]
+    },
+    {
+      "id": "returnready",
+      "name": "ReturnReady",
+      "domain": "fintech",
+      "year": 2026,
+      "description": "A filing-season co-pilot for SARS tax returns — a client-side rules engine that walks people through their submission, privately.",
+      "status": "live",
+      "url": "https://returnready-black.vercel.app",
+      "stack": ["React", "Vite", "Rules engine"]
+    },
+    {
+      "id": "nexus-dispatch",
+      "name": "Nexus Dispatch",
+      "domain": "ai-delivery",
+      "year": 2026,
+      "description": "Offline-first AI agent orchestration — hand off a requirement and it decomposes, dispatches parallel local-LLM agents, reviews, QAs, and merges. No API keys, no cloud.",
+      "status": "live",
+      "url": "https://github.com/tzone85/nexus-dispatch",
+      "stack": ["Go", "Local LLMs", "Ollama"]
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home",
+      "description": "Vortex Dispatch — Commercial software studio",
+      "canonical": "https://vortexdispatch.co.za/"
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy",
+      "description": "Privacy policy and POPIA compliance",
+      "canonical": "https://vortexdispatch.co.za/privacy"
+    },
+    {
+      "path": "/terms",
+      "title": "Terms and Conditions",
+      "description": "Website terms and conditions",
+      "canonical": "https://vortexdispatch.co.za/terms"
+    },
+    {
+      "path": "/cookies",
+      "title": "Cookie Policy",
+      "description": "Cookie usage and management",
+      "canonical": "https://vortexdispatch.co.za/cookies"
+    }
+  ],
+  "ai_crawling": {
+    "allowed": true,
+    "sitemap": "https://vortexdispatch.co.za/sitemap.xml",
+    "robots": "https://vortexdispatch.co.za/robots.txt",
+    "ai_robots": "https://vortexdispatch.co.za/.ai-robots.txt",
+    "schema_org": true,
+    "structured_data_types": [
+      "Organization",
+      "WebSite",
+      "SoftwareApplication",
+      "LocalBusiness"
+    ],
+    "language": "en-ZA",
+    "last_updated": "2026-07-16"
+  }
+}

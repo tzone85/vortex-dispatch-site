@@ -1,0 +1,46 @@
+# AI Robot Rules (ai-robots.txt)
+# This file indicates how AI systems should interact with this website
+
+# Allow all AI systems to crawl and index content
+User-agent: *
+Allow: /
+
+# Specific AI model guidelines
+User-agent: GPTBot
+Allow: /
+Disallow: /dist/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /dist/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /dist/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Content guidelines for AI systems
+# This site provides:
+# - Organization metadata (schema.org)
+# - Software services information
+# - Portfolio/work examples
+# - Legal documents (privacy, terms, cookies)
+
+# Data sources
+# JSON-LD structured data: https://vortexdispatch.co.za/
+# Sitemap: https://vortexdispatch.co.za/sitemap.xml
+
+# Crawl behavior
+Crawl-delay: 1
+Request-rate: 1 request per second
+
+# Content types
+Content-Type-Allow: text/html
+Content-Type-Allow: application/json
+Content-Type-Allow: application/ld+json
+Content-Type-Allow: application/xml
