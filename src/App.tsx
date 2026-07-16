@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { SignalStrip } from "./components/SignalStrip";
@@ -8,12 +9,11 @@ import { Ethos } from "./components/Ethos";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { JsonLd } from "./components/JsonLd";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { CookiePolicy } from "./pages/CookiePolicy";
 
-/**
- * Page composition only. Every section owns its own data (pulled from `@/core`),
- * so this file is a table of contents — the wiring, not the content.
- */
-export default function App() {
+function HomePage() {
   return (
     <>
       <div className="atmosphere" aria-hidden="true" />
@@ -39,5 +39,16 @@ export default function App() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/terms" element={<TermsAndConditions />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/cookies" element={<CookiePolicy />} />
+    </Routes>
   );
 }
