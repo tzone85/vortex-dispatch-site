@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { company, navigation, primaryCta } from "@/core";
 
 /** Fixed nav that gains a hairline + blur once you leave the hero. */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -19,7 +22,7 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#top" className="group flex items-center gap-2.5" aria-label={`${company.name} — home`}>
+        <a href="/" className="group flex items-center gap-2.5" aria-label={`${company.name} — home`}>
           <Mark />
           <span className="font-display text-[0.98rem] font-bold tracking-tight text-bone">
             Vortex<span className="text-copper">·</span>Dispatch
@@ -30,7 +33,7 @@ export function Nav() {
           {navigation.map((item) => (
             <a
               key={item.id}
-              href={item.href}
+              href={isHomePage ? item.href : `/${item.href}`}
               className="mono-meta text-bone-muted transition-colors hover:text-bone"
             >
               {item.label}
@@ -38,7 +41,7 @@ export function Nav() {
           ))}
         </div>
 
-        <a href={primaryCta.href} className="btn-primary text-[0.82rem]">
+        <a href={isHomePage ? primaryCta.href : `/${primaryCta.href}`} className="btn-primary text-[0.82rem]">
           {primaryCta.label}
         </a>
       </nav>
