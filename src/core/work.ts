@@ -28,15 +28,15 @@ export const work: readonly WorkItem[] = [
     href: "https://shiftsavvy.co.za",
   },
   {
-    id: "popiapaper",
-    name: "POPIAPaper",
-    domain: "compliance",
+    id: "foundersdesk",
+    name: "FoundersDesk",
+    domain: "consumer",
     year: 2025,
     summary:
-      "A generated POPIA compliance pack — policies and registers assembled from a business's real answers, ready to sign.",
-    stack: ["Next.js", "Document engine"],
+      "A resource platform for founders — tools, guides, and intelligence to navigate the early stage journey.",
+    stack: ["React", "Vite", "Next.js"],
     status: "live",
-    href: "https://popiapaper.vercel.app",
+    href: "https://foundersdesk.co.za",
   },
   {
     id: "returnready",
