@@ -50,15 +50,15 @@ export const work: readonly WorkItem[] = [
     href: "https://returnready-black.vercel.app",
   },
   {
-    id: "nexus-dispatch",
-    name: "Nexus Dispatch",
-    domain: "ai-delivery",
-    year: 2026,
+    id: "speedreading",
+    name: "SpeedReading",
+    domain: "consumer",
+    year: 2025,
     summary:
-      "Offline-first AI agent orchestration — hand off a requirement and it decomposes, dispatches parallel local-LLM agents, reviews, QAs, and merges. No API keys, no cloud.",
-    stack: ["Go", "Local LLMs", "Ollama"],
+      "An interactive speed reading platform — progressive training, comprehension tracking, and personalized techniques to help users read faster while understanding more.",
+    stack: ["React", "Vite", "Psychology-based"],
     status: "live",
-    href: "https://github.com/tzone85/nexus-dispatch",
+    href: "https://speedreading.playfulskills.co.za",
   },
   {
     id: "vxd",

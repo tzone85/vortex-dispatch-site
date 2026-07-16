@@ -88,14 +88,14 @@
       "stack": ["React", "Vite", "Rules engine"]
     },
     {
-      "id": "nexus-dispatch",
-      "name": "Nexus Dispatch",
-      "domain": "ai-delivery",
-      "year": 2026,
-      "description": "Offline-first AI agent orchestration — hand off a requirement and it decomposes, dispatches parallel local-LLM agents, reviews, QAs, and merges. No API keys, no cloud.",
+      "id": "speedreading",
+      "name": "SpeedReading",
+      "domain": "consumer",
+      "year": 2025,
+      "description": "An interactive speed reading platform — progressive training, comprehension tracking, and personalized techniques to help users read faster while understanding more.",
       "status": "live",
-      "url": "https://github.com/tzone85/nexus-dispatch",
-      "stack": ["Go", "Local LLMs", "Ollama"]
+      "url": "https://speedreading.playfulskills.co.za",
+      "stack": ["React", "Vite", "Psychology-based"]
     }
   ],
   "pages": [
