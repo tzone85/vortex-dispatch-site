@@ -8,24 +8,24 @@ export function PrivacyPolicy() {
       <div className="grain" aria-hidden="true" />
 
       <Nav />
-      <main className="min-h-screen bg-void text-copper">
+      <main className="min-h-screen bg-void text-bone">
         <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-          <div className="prose prose-invert max-w-none space-y-6">
+          <h1 className="text-4xl font-bold mb-8 text-copper">Privacy Policy</h1>
+          <div className="space-y-6">
             <section>
-              <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">1. Introduction</h2>
               <p>
                 Vortex Dispatch ("we", "our", or "us") operates the vortexdispatch.com website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our website and the choices you have associated with that data.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">2. Information Collection and Use</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">2. Information Collection and Use</h2>
               <p>
                 We collect several different types of information for various purposes to provide and improve our service to you.
               </p>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2">Types of Data Collected:</h3>
+              <h3 className="text-xl font-semibold mt-4 mb-2 text-copper">Types of Data Collected:</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Personal Data:</strong> While using our website, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). This may include:
                   <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -41,7 +41,7 @@ export function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">3. Use of Data</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">3. Use of Data</h2>
               <p>Vortex Dispatch uses the collected data for various purposes:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>To provide and maintain our website</li>
@@ -55,28 +55,28 @@ export function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">4. Security of Data</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">4. Security of Data</h2>
               <p>
                 The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">5. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">5. Changes to This Privacy Policy</h2>
               <p>
                 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the bottom of this Privacy Policy.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">6. Contact Us</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">6. Contact Us</h2>
               <p>
                 If you have any questions about this Privacy Policy, please contact us using the contact information provided on our website.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">7. Compliance with POPIA</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-copper">7. Compliance with POPIA</h2>
               <p>
                 We comply with the Protection of Personal Information Act (POPIA) of South Africa. Your personal information is processed in accordance with POPIA requirements and your rights as a data subject.
               </p>
