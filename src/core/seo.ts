@@ -1,3 +1,4 @@
+import { brandAssets, brandUrl } from "./brand";
 import type { CompanyProfile, SeoMeta, WorkItem } from "./types";
 
 /** Build the page's <title>/description/canonical from the company profile. */
@@ -25,6 +26,8 @@ export function buildOrganizationJsonLd(
         "@id": `${c.siteUrl}/#organization`,
         name: c.name,
         url: c.siteUrl,
+        logo: brandUrl(c.siteUrl, brandAssets.logo),
+        image: brandUrl(c.siteUrl, brandAssets.logo512),
         email: c.email,
         telephone: null,
         foundingDate: String(c.foundedYear),

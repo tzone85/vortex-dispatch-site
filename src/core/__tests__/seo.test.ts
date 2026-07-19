@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { brandAssets, brandUrl } from "../brand";
 import { buildSeoMeta, buildOrganizationJsonLd } from "../seo";
 import { company } from "../company";
 import { work } from "../work";
@@ -19,15 +20,25 @@ describe("buildSeoMeta", () => {
 
 describe("buildOrganizationJsonLd", () => {
   const ld = buildOrganizationJsonLd(company, work) as Record<string, unknown>;
+  const graph = ld["@graph"] as Record<string, unknown>[];
+  const org = graph.find((n) => n["@type"] === "Organization") as Record<
+    string,
+    unknown
+  >;
 
-  it("is a schema.org Organization", () => {
+  it("is a schema.org Organization graph", () => {
     expect(ld["@context"]).toBe("https://schema.org");
-    expect(ld["@type"]).toBe("Organization");
-    expect(ld.name).toBe(company.name);
+    expect(org).toBeDefined();
+    expect(org.name).toBe(company.name);
+  });
+
+  it("includes brand logo assets", () => {
+    expect(org.logo).toBe(brandUrl(company.siteUrl, brandAssets.logo));
+    expect(org.image).toBe(brandUrl(company.siteUrl, brandAssets.logo512));
   });
 
   it("advertises only live products as offers", () => {
-    const offers = ld.makesOffer as unknown[];
+    const offers = org.makesOffer as unknown[];
     const liveCount = work.filter((w) => w.status === "live").length;
     expect(offers).toHaveLength(liveCount);
   });

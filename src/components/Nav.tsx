@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { company, navigation, primaryCta } from "@/core";
+import { brandAssets, company, navigation, primaryCta } from "@/core";
 
 /** Fixed nav that gains a hairline + blur once you leave the hero. */
 export function Nav() {
@@ -23,7 +23,14 @@ export function Nav() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="/" className="group flex items-center gap-2.5" aria-label={`${company.name} — home`}>
-          <Mark />
+          <img
+            src={brandAssets.logo64}
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-[7px] shadow-[0_0_0_1px_rgba(236,229,216,0.08)] transition-transform duration-300 group-hover:scale-[1.04]"
+            decoding="async"
+          />
           <span className="font-display text-[0.98rem] font-bold tracking-tight text-bone">
             Vortex<span className="text-copper">·</span>Dispatch
           </span>
@@ -46,22 +53,5 @@ export function Nav() {
         </a>
       </nav>
     </header>
-  );
-}
-
-/** Compact spiral glyph — echoes the hero vortex. */
-function Mark() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(236,229,216,0.14)" strokeWidth="1" />
-      <path
-        d="M12 12 C 12 8, 16 8, 16 12 C 16 17, 9 17, 9 11 C 9 4, 18 4, 18 12"
-        fill="none"
-        stroke="#d08a4e"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
-      <circle cx="12" cy="12" r="1.6" fill="#fdf1dc" />
-    </svg>
   );
 }
