@@ -26,7 +26,7 @@ export function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-signal" />
             </span>
             <span className="mono-meta uppercase tracking-[0.2em] text-bone-muted">
-              Software studio · {company.location}
+              Taking on new projects
             </span>
           </span>
 
