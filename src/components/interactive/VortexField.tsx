@@ -15,7 +15,9 @@ export function VortexField() {
   const reduced = usePrefersReducedMotion();
 
   const arcs = useMemo(
-    () => vortexArcs({ count: 9, cx: C, cy: C, turns: 2.6, maxRadius: MAX_R }),
+    // Three arms, like the nav mark — sparse enough to read as a galaxy,
+    // not a fingerprint. All arms stay inside MAX_R (see core/geometry).
+    () => vortexArcs({ count: 3, cx: C, cy: C, turns: 2.6, maxRadius: MAX_R }),
     [],
   );
 
@@ -29,7 +31,10 @@ export function VortexField() {
   }, []);
 
   // A point far enough out to hang the "you are here" tick on.
-  const tick = useMemo(() => spiralPoint({ cx: C, cy: C, a: MAX_R * 0.06, b: 0.34, theta: 6.6 }), []);
+  const tick = useMemo(
+    () => spiralPoint({ cx: C, cy: C, a: MAX_R * 0.06, b: 0.34, theta: 6.6 }),
+    [],
+  );
 
   return (
     <svg
@@ -77,7 +82,10 @@ export function VortexField() {
         style={
           reduced
             ? undefined
-            : { transformOrigin: `${C}px ${C}px`, animation: "spin-slow 46s linear infinite" }
+            : {
+                transformOrigin: `${C}px ${C}px`,
+                animation: "spin-slow 46s linear infinite",
+              }
         }
       >
         {arcs.map((arc) => (
@@ -97,7 +105,10 @@ export function VortexField() {
         style={
           reduced
             ? undefined
-            : { transformOrigin: `${C}px ${C}px`, animation: "spin-reverse 30s linear infinite" }
+            : {
+                transformOrigin: `${C}px ${C}px`,
+                animation: "spin-reverse 30s linear infinite",
+              }
         }
       >
         {dispatched.map((d) => (
@@ -131,7 +142,14 @@ export function VortexField() {
         cy={C}
         r={54}
         fill="url(#core-glow)"
-        style={reduced ? undefined : { transformOrigin: `${C}px ${C}px`, animation: "pulse-core 4.5s ease-in-out infinite" }}
+        style={
+          reduced
+            ? undefined
+            : {
+                transformOrigin: `${C}px ${C}px`,
+                animation: "pulse-core 4.5s ease-in-out infinite",
+              }
+        }
       />
       <circle cx={C} cy={C} r={7} fill="#fdf1dc" filter="url(#soft-glow)" />
       <circle

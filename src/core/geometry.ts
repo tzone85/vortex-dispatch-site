@@ -71,7 +71,12 @@ export function vortexArcs(opts: VortexOpts): VortexArc[] {
     const pts: Point[] = [];
     for (let s = 0; s <= samples; s++) {
       const t = (s / samples) * thetaMax;
-      pts.push(spiralPoint({ cx, cy, a, b, theta: t + phase }));
+      // Radius grows with t only; phase rotates the arm without growing it.
+      // (Feeding t+phase into the radius made later arms overshoot maxRadius
+      // and clip at the SVG viewport edge.)
+      const r = a * Math.exp(b * t);
+      const angle = t + phase;
+      pts.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
     }
     arcs.push({
       id: i,
@@ -115,7 +120,12 @@ export interface PipelineLayoutOpts {
 }
 
 /** Evenly space `count` nodes across `width`, anchored to the margins. */
-export function pipelineLayout({ count, width, y, margin }: PipelineLayoutOpts): PipelineNode[] {
+export function pipelineLayout({
+  count,
+  width,
+  y,
+  margin,
+}: PipelineLayoutOpts): PipelineNode[] {
   if (count < 2) throw new Error("pipelineLayout: need at least 2 nodes");
   const span = width - margin * 2;
   const step = span / (count - 1);
@@ -151,7 +161,10 @@ export interface DispatchDot {
 /** Evenly-phased dots that ride the pipeline path as "dispatched" signals. */
 export function dispatchDots(count: number): DispatchDot[] {
   if (count <= 0) return [];
-  return Array.from({ length: count }, (_, i) => ({ id: i, offset: i / count }));
+  return Array.from({ length: count }, (_, i) => ({
+    id: i,
+    offset: i / count,
+  }));
 }
 
 /** Trim float noise so generated SVG stays compact and diff-friendly. */

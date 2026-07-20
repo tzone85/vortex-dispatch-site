@@ -27,7 +27,13 @@ describe("spiralPoint", () => {
 });
 
 describe("vortexArcs", () => {
-  const arcs = vortexArcs({ count: 6, cx: 200, cy: 200, turns: 2.5, maxRadius: 180 });
+  const arcs = vortexArcs({
+    count: 6,
+    cx: 200,
+    cy: 200,
+    turns: 2.5,
+    maxRadius: 180,
+  });
 
   it("produces exactly `count` arcs", () => {
     expect(arcs).toHaveLength(6);
@@ -46,11 +52,25 @@ describe("vortexArcs", () => {
     for (const arc of arcs) expect(arc.delay).toBeGreaterThanOrEqual(0);
   });
 
-  it("keeps all sampled points within the max radius of the centre", () => {
-    const nums = arcs[0].d.match(/-?\d+(\.\d+)?/g)!.map(Number);
-    for (let i = 0; i < nums.length; i += 2) {
-      const r = Math.hypot(nums[i] - 200, nums[i + 1] - 200);
-      expect(r).toBeLessThanOrEqual(180 + 0.5);
+  it("keeps all sampled points of EVERY arc within the max radius of the centre", () => {
+    // Regression: phase offsets must rotate arcs, never grow their radius.
+    // The old implementation fed (t + phase) into r = a·e^(b·θ), so later arcs
+    // blew past maxRadius and were clipped by the SVG viewport.
+    for (const arc of arcs) {
+      const nums = arc.d.match(/-?\d+(\.\d+)?/g)!.map(Number);
+      for (let i = 0; i < nums.length; i += 2) {
+        const r = Math.hypot(nums[i] - 200, nums[i + 1] - 200);
+        expect(r).toBeLessThanOrEqual(180 + 0.5);
+      }
+    }
+  });
+
+  it("every arc terminates at maxRadius (arms share one silhouette, rotated)", () => {
+    for (const arc of arcs) {
+      const nums = arc.d.match(/-?\d+(\.\d+)?/g)!.map(Number);
+      const endX = nums[nums.length - 2];
+      const endY = nums[nums.length - 1];
+      expect(Math.hypot(endX - 200, endY - 200)).toBeCloseTo(180, 0);
     }
   });
 });
@@ -74,7 +94,9 @@ describe("pipelineLayout", () => {
   });
 
   it("throws rather than dividing by zero for a single node", () => {
-    expect(() => pipelineLayout({ count: 1, width: 1000, y: 60, margin: 80 })).toThrow();
+    expect(() =>
+      pipelineLayout({ count: 1, width: 1000, y: 60, margin: 80 }),
+    ).toThrow();
   });
 });
 
