@@ -25,7 +25,11 @@ export function Footer() {
 
           <nav className="flex flex-wrap gap-x-7 gap-y-2">
             {navigation.map((item) => (
-              <a key={item.id} href={item.href} className="mono-meta transition-colors hover:text-copper-bright">
+              <a
+                key={item.id}
+                href={item.href}
+                className="mono-meta transition-colors hover:text-copper-bright"
+              >
                 {item.label}
               </a>
             ))}
@@ -36,22 +40,31 @@ export function Footer() {
           <p className="mono-meta">
             © {company.foundedYear}–2026 {company.name} · {company.location}
           </p>
+          <p className="mono-meta">
+            made with <span className="text-copper-bright">❤️</span> by vortex
+            dispatch
+          </p>
           <nav className="flex flex-wrap gap-x-7 gap-y-2">
-            <a href="/privacy" className="text-sm text-bone-muted hover:text-copper transition-colors">
+            <a
+              href="/privacy"
+              className="text-sm text-bone-muted hover:text-copper transition-colors"
+            >
               Privacy
             </a>
-            <a href="/terms" className="text-sm text-bone-muted hover:text-copper transition-colors">
+            <a
+              href="/terms"
+              className="text-sm text-bone-muted hover:text-copper transition-colors"
+            >
               Terms
             </a>
-            <a href="/cookies" className="text-sm text-bone-muted hover:text-copper transition-colors">
+            <a
+              href="/cookies"
+              className="text-sm text-bone-muted hover:text-copper transition-colors"
+            >
               Cookies
             </a>
           </nav>
         </div>
-
-        <p className="mt-6 text-sm text-bone-muted">
-          made with <span className="text-copper-bright">❤️</span> by vortex dispatch
-        </p>
       </div>
     </footer>
   );

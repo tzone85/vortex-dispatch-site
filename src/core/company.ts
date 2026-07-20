@@ -7,10 +7,10 @@ import type { CompanyProfile, NavItem } from "./types";
 export const company: CompanyProfile = {
   name: "Vortex Dispatch",
   tagline: "Commercial software, engineered to run.",
-  headline: "We turn operational problems into software that",
-  headlineAccent: "companies run on.",
+  headline: "We build the software your business",
+  headlineAccent: "runs on.",
   subhead:
-    "A commercial software studio. We design, build, and ship product-grade systems — marketplaces, booking platforms, compliance tooling, and AI-assisted delivery — then stay to keep them running.",
+    "A commercial software studio in Cape Town. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling. Then we stay to keep them running.",
   positioning:
     "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
   email: "hello@vortexdispatch.co.za",
