@@ -1,44 +1,44 @@
 @import "tailwindcss";
 
 /*
-  VORTEX DISPATCH — "Night Observatory"
-  Near-black obsidian · warm parchment ink · aurora-green accent · rare brass.
-  A single cold "signal" teal is reserved for live/interactive states only.
-  Deliberately NO purple, NO neon, NO system fonts — the anti-AI-slop brief.
+  VORTEX DISPATCH — "The Gallery"
+  Warm gallery white · slate-navy ink · old-style serif · champagne whisper.
+  Flat corners, hairline rules, letterspaced caps — private-bank restraint.
+  Deliberately NO purple, NO neon, NO gradient buttons, NO system fonts.
 */
 @theme {
-  /* surfaces */
-  --color-void: #08080a;
-  --color-void-2: #0d0c10;
-  --color-panel: #141319;
-  --color-panel-2: #1b1a22;
+  /* surfaces — gallery white */
+  --color-void: #f1f0ec;
+  --color-void-2: #eae9e4;
+  --color-panel: #ffffff;
+  --color-panel-2: #f7f6f2;
 
   /* ink (warm parchment) */
-  --color-bone: #ece5d8;
-  --color-bone-muted: #a39c8e;
-  --color-bone-faint: #6e6a61;
+  --color-bone: #2e3a45;
+  --color-bone-muted: #5f6b75;
+  --color-bone-faint: #8b949c;
 
   /* lines */
-  --color-line: rgba(236, 229, 216, 0.08);
-  --color-line-strong: rgba(236, 229, 216, 0.18);
+  --color-line: rgba(46, 58, 69, 0.14);
+  --color-line-strong: rgba(46, 58, 69, 0.3);
 
-  /* accents — aurora green */
-  --color-accent: #58c08a;
-  --color-accent-bright: #8adfae;
-  --color-accent-deep: #2e8f5c;
-  --color-brass: #c9a227;
+  /* accents — slate navy, champagne whisper */
+  --color-accent: #3d4f61;
+  --color-accent-bright: #24303b;
+  --color-accent-deep: #1b242c;
+  --color-brass: #a8905f;
 
   /* the one cold accent — live/interactive only */
-  --color-signal: #5fb6b0;
+  --color-signal: #5b7284;
 
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "EB Garamond", ui-serif, Georgia, serif;
+  --font-serif: "EB Garamond", ui-serif, Georgia, serif;
   --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -54,7 +54,7 @@ body {
   background: var(--color-void);
   color: var(--color-bone);
   font-family: var(--font-sans);
-  font-weight: 380;
+  font-weight: 420;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -66,9 +66,9 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.08;
 }
 
 .font-serif-accent {
@@ -79,34 +79,17 @@ h3,
 }
 
 ::selection {
-  background: rgba(88, 192, 138, 0.32);
-  color: #fff;
+  background: rgba(46, 58, 69, 0.24);
+  color: #10161c;
 }
 
-/* ---------- atmosphere: obsidian with warm nebula, no purple ---------- */
+/* ---------- atmosphere: gallery calm ---------- */
 .atmosphere {
   position: fixed;
   inset: 0;
   z-index: -2;
   background-color: var(--color-void);
-  background-image:
-    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(88, 192, 138, 0.09), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 5%, rgba(201, 162, 39, 0.05), transparent 55%),
-    radial-gradient(ellipse 45% 45% at 5% 40%, rgba(95, 182, 176, 0.035), transparent 50%),
-    linear-gradient(180deg, #08080a 0%, #0b0a0d 50%, #08080a 100%);
-}
-
-/* faint engineering grid, masked to a soft vignette */
-.atmosphere::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--color-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, black 10%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, black 10%, transparent 78%);
+  background-image: linear-gradient(180deg, #e7e6e1 0%, #f1f0ec 42%, #f1f0ec 100%);
 }
 
 /* film grain — subtle texture so flat blacks never look like default CSS */
@@ -115,8 +98,8 @@ h3,
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  opacity: 0;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -126,7 +109,7 @@ h3,
 }
 
 .panel {
-  background: linear-gradient(165deg, rgba(27, 26, 34, 0.72) 0%, rgba(13, 12, 16, 0.66) 100%);
+  background: #ffffff;
   border: 1px solid var(--color-line);
   backdrop-filter: blur(10px);
   transition:
@@ -139,18 +122,18 @@ h3,
   border-color: var(--color-line-strong);
   transform: translateY(-3px);
   box-shadow:
-    0 0 0 1px rgba(88, 192, 138, 0.1),
-    0 30px 60px -34px rgba(0, 0, 0, 0.9);
+    0 0 0 1px rgba(46, 58, 69, 0.18),
+    0 22px 44px -30px rgba(46, 58, 69, 0.28);
 }
 
 /* ---------- type helpers ---------- */
 .kicker {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-bone-muted);
 }
 
 .mono-meta {
@@ -162,7 +145,7 @@ h3,
 
 .accent-rule {
   height: 1px;
-  background: linear-gradient(90deg, var(--color-accent), rgba(95, 182, 176, 0.6), transparent);
+  background: linear-gradient(90deg, var(--color-accent), rgba(168, 144, 95, 0.6), transparent);
 }
 
 /* ---------- buttons ---------- */
@@ -170,39 +153,38 @@ h3,
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  border-radius: 999px;
-  padding: 0.85rem 1.5rem;
+  border-radius: 0;
+  padding: 0.95rem 1.7rem;
   font-family: var(--font-sans);
+  font-size: 0.78rem;
   font-weight: 600;
-  color: #06140c;
-  background: linear-gradient(135deg, #c9f2d9 0%, var(--color-accent-bright) 42%, var(--color-accent-deep) 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 14px 34px -14px rgba(88, 192, 138, 0.6);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f7f6f2;
+  background: #2e3a45;
   transition:
-    transform 0.2s ease,
-    filter 0.2s ease,
-    box-shadow 0.2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.05);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 20px 44px -16px rgba(88, 192, 138, 0.7);
+  background: #1b242c;
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  border-radius: 999px;
-  padding: 0.85rem 1.4rem;
-  font-weight: 500;
+  border-radius: 0;
+  padding: 0.95rem 1.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--color-bone);
-  border: 1px solid var(--color-line-strong);
-  background: rgba(20, 19, 25, 0.6);
+  border: 1px solid rgba(46, 58, 69, 0.55);
+  background: transparent;
   transition:
     border-color 0.2s ease,
     background 0.2s ease,
@@ -210,8 +192,8 @@ h3,
 }
 
 .btn-ghost:hover {
-  border-color: rgba(88, 192, 138, 0.5);
-  background: rgba(27, 26, 34, 0.9);
+  border-color: #2e3a45;
+  background: #ffffff;
   transform: translateY(-2px);
 }
 
