@@ -37,6 +37,7 @@ export type WorkDomain =
   | "compliance"
   | "fintech"
   | "consumer"
+  | "wellness"
   | "ai-delivery";
 
 export interface WorkItem {

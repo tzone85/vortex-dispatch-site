@@ -61,13 +61,14 @@ export const work: readonly WorkItem[] = [
     href: "https://speedreading.playfulskills.co.za",
   },
   {
-    id: "vxd",
-    name: "VXD Delivery",
-    domain: "ai-delivery",
+    id: "sovereign-breath",
+    name: "Sovereign Breath",
+    domain: "wellness",
     year: 2026,
     summary:
-      "Our own agentic build pipeline — multi-agent planning, TDD, and a security gate that ships production software from a written brief.",
-    stack: ["Go", "Multi-agent", "TDD"],
-    status: "in-build",
+      "A breathwork PWA — guided breathing patterns, a streak that forgives, and private circles that turn five minutes a day into a shared practice.",
+    stack: ["React", "Vite", "Offline-first PWA"],
+    status: "live",
+    href: "https://breath.playfulskills.co.za",
   },
 ] as const;

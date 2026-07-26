@@ -9,6 +9,7 @@ const DOMAIN_LABEL: Record<WorkDomain, string> = {
   compliance: "Compliance",
   fintech: "Fintech",
   consumer: "Consumer",
+  wellness: "Wellness",
   "ai-delivery": "AI delivery",
 };
 
@@ -27,7 +28,7 @@ export function Work() {
               </span>
             </>
           }
-          lead="A slice of what we have built — booking, marketplace, compliance, fintech, consumer, and our own delivery engine."
+          lead="A slice of what we have built — booking, marketplace, fintech, consumer, and wellness."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
