@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
 import { brandAssets, company, navigation, primaryCta } from "@/core";
 
@@ -113,56 +114,61 @@ export function Nav() {
         </div>
       </nav>
 
-      {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="menu-overlay md:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Site menu"
-        >
-          <div className="flex items-center justify-between px-5 py-4">
-            <span className="font-display text-[0.98rem] font-bold tracking-tight text-panel">
-              Vortex<span className="text-brass">·</span>Dispatch
-            </span>
-            <button
-              type="button"
-              className="menu-close"
-              onClick={() => setMenuOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-          <nav className="flex flex-col gap-1 px-5 pt-10" aria-label="Sections">
-            {navigation.map((item, i) => (
-              <a
-                key={item.id}
-                href={hrefFor(item.href)}
-                className="menu-link"
-                onClick={(e) => jumpFromMenu(e, item.href)}
+      {menuOpen &&
+        createPortal(
+          <div
+            id="mobile-menu"
+            className="menu-overlay md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+          >
+            <div className="flex items-center justify-between px-5 py-4">
+              <span className="font-display text-[0.98rem] font-bold tracking-tight text-panel">
+                Vortex<span className="text-brass">·</span>Dispatch
+              </span>
+              <button
+                type="button"
+                className="menu-close"
+                onClick={() => setMenuOpen(false)}
               >
-                <span className="menu-index">0{i + 1}</span>
-                {item.label}
+                Close
+              </button>
+            </div>
+            <nav
+              className="flex flex-col gap-1 px-5 pt-10"
+              aria-label="Sections"
+            >
+              {navigation.map((item, i) => (
+                <a
+                  key={item.id}
+                  href={hrefFor(item.href)}
+                  className="menu-link"
+                  onClick={(e) => jumpFromMenu(e, item.href)}
+                >
+                  <span className="menu-index">0{i + 1}</span>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <div className="mt-auto px-5 pb-10">
+              <a
+                href={hrefFor(primaryCta.href)}
+                className="menu-cta"
+                onClick={(e) => jumpFromMenu(e, primaryCta.href)}
+              >
+                {primaryCta.label}
               </a>
-            ))}
-          </nav>
-          <div className="mt-auto px-5 pb-10">
-            <a
-              href={hrefFor(primaryCta.href)}
-              className="menu-cta"
-              onClick={(e) => jumpFromMenu(e, primaryCta.href)}
-            >
-              {primaryCta.label}
-            </a>
-            <a
-              href={`mailto:${company.email}`}
-              className="mono-meta mt-5 block text-center !text-[0.72rem] text-panel/60"
-            >
-              {company.email}
-            </a>
-          </div>
-        </div>
-      )}
+              <a
+                href={`mailto:${company.email}`}
+                className="mono-meta mt-5 block text-center !text-[0.72rem] text-panel/60"
+              >
+                {company.email}
+              </a>
+            </div>
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }
