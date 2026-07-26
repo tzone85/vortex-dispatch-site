@@ -71,7 +71,7 @@ export function VortexField() {
           cy={C}
           r={MAX_R * f}
           fill="none"
-          stroke="rgba(236,229,216,0.09)"
+          stroke="rgba(46,58,69,0.1)"
           strokeWidth={1}
           strokeDasharray={i === 3 ? "2 7" : undefined}
         />

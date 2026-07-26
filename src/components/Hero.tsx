@@ -18,6 +18,14 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-void" />
 
+      {/* phones: the spiral turns softly behind the hero copy */}
+      <div
+        className="pointer-events-none absolute -right-28 top-16 w-[420px] opacity-30 lg:hidden"
+        aria-hidden="true"
+      >
+        <VortexField />
+      </div>
+
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="hero-stagger">
           <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/50 px-3.5 py-1.5 backdrop-blur-sm">
@@ -56,7 +64,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative hidden justify-center lg:flex lg:justify-end">
           <div className="aspect-square w-full max-w-[520px]">
             <VortexField />
           </div>
