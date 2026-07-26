@@ -13,6 +13,8 @@ export const brandAssets = {
   logo256: "/brand/logo-256.png",
   logo512: "/brand/logo-512.png",
   logoHorizontal: "/brand/logo-horizontal.png",
+  /** 1200x630 social share card (Open Graph / Twitter). */
+  ogCard: "/brand/og-card.png",
   logoStacked: "/brand/logo-stacked.png",
 
   faviconSvg: "/brand/favicon.svg",
