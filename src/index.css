@@ -199,6 +199,74 @@ h3,
   transform: translateY(-2px);
 }
 
+/* ---------- mobile menu: full-screen slate overlay ---------- */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-accent-deep);
+  color: var(--color-panel);
+  animation: menu-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menu-close {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 246, 242, 0.75);
+  border: 1px solid rgba(247, 246, 242, 0.35);
+  background: transparent;
+  padding: 0.55rem 1rem;
+}
+
+.menu-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.15;
+  color: #f7f6f2;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(247, 246, 242, 0.12);
+}
+
+.menu-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--color-brass);
+}
+
+.menu-cta {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #1b242c;
+  background: #f7f6f2;
+}
+
 /* compact CTAs on phones — the letterspaced caps label is wide */
 @media (max-width: 640px) {
   .btn-primary,
