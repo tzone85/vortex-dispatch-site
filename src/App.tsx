@@ -22,7 +22,7 @@ function HomePage() {
 
       <a
         href="#capabilities"
-        className="sr-only rounded-full bg-copper px-4 py-2 text-void focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50"
+        className="sr-only rounded-full bg-accent px-4 py-2 text-void focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50"
       >
         Skip to content
       </a>

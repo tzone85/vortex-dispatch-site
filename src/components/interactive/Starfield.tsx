@@ -45,7 +45,7 @@ export function Starfield({ count = 150, className = "" }: StarfieldProps) {
           cx={s.x}
           cy={s.y}
           r={s.r}
-          fill={s.warm ? "#e9a96a" : "#ece5d8"}
+          fill={s.warm ? "#8adfae" : "#ece5d8"}
           opacity={s.o}
         />
       ))}

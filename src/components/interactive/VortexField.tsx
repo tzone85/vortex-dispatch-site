@@ -45,14 +45,14 @@ export function VortexField() {
     >
       <defs>
         <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#fbe4c0" stopOpacity="1" />
-          <stop offset="35%" stopColor="#e9a96a" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="#d08a4e" stopOpacity="0" />
+          <stop offset="0%" stopColor="#c9f2d9" stopOpacity="1" />
+          <stop offset="35%" stopColor="#8adfae" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#58c08a" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="arc-stroke" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#e9a96a" stopOpacity="0.05" />
-          <stop offset="55%" stopColor="#d08a4e" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#fbe4c0" stopOpacity="0.95" />
+          <stop offset="0%" stopColor="#8adfae" stopOpacity="0.05" />
+          <stop offset="55%" stopColor="#58c08a" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#c9f2d9" stopOpacity="0.95" />
         </linearGradient>
         <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3.2" result="b" />
@@ -100,7 +100,7 @@ export function VortexField() {
         ))}
       </g>
 
-      {/* dispatched signals — one is "live" (cold signal teal), the rest copper */}
+      {/* dispatched signals — one is "live" (cold signal teal), the rest accent */}
       <g
         style={
           reduced
@@ -117,7 +117,7 @@ export function VortexField() {
             cx={d.x}
             cy={d.y}
             r={d.id === 0 ? 4.5 : 3}
-            fill={d.id === 0 ? "#5fb6b0" : "#e9a96a"}
+            fill={d.id === 0 ? "#5fb6b0" : "#8adfae"}
             filter="url(#soft-glow)"
           />
         ))}

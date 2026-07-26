@@ -27,7 +27,7 @@ export function Process() {
         title={
           <>
             A brief goes in.{" "}
-            <span className="font-serif-accent text-copper-bright">Running software comes out.</span>
+            <span className="font-serif-accent text-accent-bright">Running software comes out.</span>
           </>
         }
         lead="The same five stages every time. Tests lead, review gates, and we stay for the running — that discipline is the product."
@@ -38,8 +38,8 @@ export function Process() {
           <svg viewBox={`0 0 ${VW} ${VH}`} className="w-full" role="img" aria-label="The Vortex Dispatch build pipeline: Brief, Architecture, Build with TDD, Ship, Run">
             <defs>
               <linearGradient id="pipe-grad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#a5652f" />
-                <stop offset="50%" stopColor="#e9a96a" />
+                <stop offset="0%" stopColor="#2e8f5c" />
+                <stop offset="50%" stopColor="#8adfae" />
                 <stop offset="100%" stopColor="#5fb6b0" />
               </linearGradient>
               <filter id="dot-glow" x="-80%" y="-80%" width="260%" height="260%">
@@ -67,7 +67,7 @@ export function Process() {
             {/* travelling signals */}
             {!reduced &&
               dots.map((d) => (
-                <circle key={d.id} r={4} fill="#fbe4c0" filter="url(#dot-glow)">
+                <circle key={d.id} r={4} fill="#c9f2d9" filter="url(#dot-glow)">
                   <animateMotion dur={`${DUR}s`} repeatCount="indefinite" begin={`-${d.offset * DUR}s`}>
                     <mpath href="#pipe-path" />
                   </animateMotion>
@@ -78,7 +78,7 @@ export function Process() {
             {nodes.map((n, i) => (
               <g key={pipeline[i].id}>
                 <circle cx={n.x} cy={n.y} r={13} fill="#0d0c10" stroke="rgba(236,229,216,0.18)" strokeWidth={1} />
-                <circle cx={n.x} cy={n.y} r={5} fill={i === 2 ? "#5fb6b0" : "#d08a4e"} />
+                <circle cx={n.x} cy={n.y} r={5} fill={i === 2 ? "#5fb6b0" : "#58c08a"} />
                 <text
                   x={n.x}
                   y={n.y - 26}
@@ -112,7 +112,7 @@ export function Process() {
         {pipeline.map((stage, i) => (
           <Reveal key={stage.id} delay={i * 70} className="rounded-xl border border-line bg-void-2/40 p-5">
             <div className="flex items-baseline gap-2">
-              <span className="font-mono text-xs text-copper">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
               <span className="font-display text-sm font-bold text-bone">{stage.title}</span>
             </div>
             <p className="mt-3 text-[0.82rem] leading-relaxed text-bone-muted">{stage.detail}</p>
