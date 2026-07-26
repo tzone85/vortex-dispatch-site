@@ -160,6 +160,7 @@ h3,
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: #f7f6f2;
   background: #2e3a45;
   transition:
@@ -182,6 +183,7 @@ h3,
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--color-bone);
   border: 1px solid rgba(46, 58, 69, 0.55);
   background: transparent;
@@ -195,6 +197,16 @@ h3,
   border-color: #2e3a45;
   background: #ffffff;
   transform: translateY(-2px);
+}
+
+/* compact CTAs on phones — the letterspaced caps label is wide */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.8rem 1.15rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
 }
 
 /* ---------- scroll reveal ---------- */

@@ -31,7 +31,7 @@ export function Nav() {
             className="h-7 w-7 rounded-[7px] shadow-[0_0_0_1px_rgba(236,229,216,0.08)] transition-transform duration-300 group-hover:scale-[1.04]"
             decoding="async"
           />
-          <span className="font-display text-[0.98rem] font-bold tracking-tight text-bone">
+          <span className="hidden font-display text-[0.98rem] font-bold tracking-tight text-bone sm:inline">
             Vortex<span className="text-accent">·</span>Dispatch
           </span>
         </a>
