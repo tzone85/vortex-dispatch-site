@@ -32,7 +32,7 @@ export function Hero() {
 
           <h1 className="mt-7 max-w-2xl text-[2.6rem] leading-[1.02] text-bone sm:text-6xl lg:text-[4.1rem]">
             {company.headline}{" "}
-            <span className="font-serif-accent text-copper-bright">
+            <span className="font-serif-accent text-accent-bright">
               {company.headlineAccent}
             </span>
           </h1>

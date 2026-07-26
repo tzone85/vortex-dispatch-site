@@ -22,7 +22,7 @@ export function Work() {
           title={
             <>
               Real products,{" "}
-              <span className="font-serif-accent text-copper-bright">
+              <span className="font-serif-accent text-accent-bright">
                 running today.
               </span>
             </>
@@ -42,7 +42,7 @@ export function Work() {
                   className="group panel flex h-full flex-col rounded-2xl p-6 sm:p-7"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full border border-line px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-copper">
+                    <span className="rounded-full border border-line px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-accent">
                       {DOMAIN_LABEL[w.domain]}
                     </span>
                     <span className="flex items-center gap-1.5 font-mono text-[0.68rem] text-bone-faint">
@@ -58,7 +58,7 @@ export function Work() {
                   <h3 className="mt-5 flex items-center gap-2 font-display text-xl font-bold text-bone">
                     {w.name}
                     {w.href && (
-                      <span className="translate-y-px text-copper opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100">
+                      <span className="translate-y-px text-accent opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100">
                         ↗
                       </span>
                     )}

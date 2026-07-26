@@ -4,8 +4,8 @@
   "description": "Commercial software studio — product-grade systems engineered to run.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#08080a",
-  "theme_color": "#08080a",
+  "background_color": "#f1f0ec",
+  "theme_color": "#2e3a45",
   "icons": [
     {
       "src": "/brand/icon-192.png",

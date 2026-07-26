@@ -11,7 +11,7 @@ export function Capabilities() {
         title={
           <>
             Four things we do,{" "}
-            <span className="font-serif-accent text-copper-bright">done properly.</span>
+            <span className="font-serif-accent text-accent-bright">done properly.</span>
           </>
         }
         lead="Depth over breadth. Each line is something we have shipped to production, more than once."
@@ -22,7 +22,7 @@ export function Capabilities() {
           <Reveal key={c.id} delay={i * 90} className="group panel rounded-2xl p-7 sm:p-8">
             <div className="flex items-start justify-between gap-4">
               <h3 className="font-display text-xl font-bold text-bone sm:text-2xl">{c.title}</h3>
-              <span className="font-mono text-sm text-copper/80 transition-colors group-hover:text-copper-bright">
+              <span className="font-mono text-sm text-accent/80 transition-colors group-hover:text-accent-bright">
                 {c.index}
               </span>
             </div>

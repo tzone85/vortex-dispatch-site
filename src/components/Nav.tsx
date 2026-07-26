@@ -32,7 +32,7 @@ export function Nav() {
             decoding="async"
           />
           <span className="font-display text-[0.98rem] font-bold tracking-tight text-bone">
-            Vortex<span className="text-copper">·</span>Dispatch
+            Vortex<span className="text-accent">·</span>Dispatch
           </span>
         </a>
 

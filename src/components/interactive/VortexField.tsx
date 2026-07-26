@@ -45,14 +45,14 @@ export function VortexField() {
     >
       <defs>
         <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#fbe4c0" stopOpacity="1" />
-          <stop offset="35%" stopColor="#e9a96a" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="#d08a4e" stopOpacity="0" />
+          <stop offset="0%" stopColor="#24303b" stopOpacity="1" />
+          <stop offset="35%" stopColor="#5f7284" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#3d4f61" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="arc-stroke" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#e9a96a" stopOpacity="0.05" />
-          <stop offset="55%" stopColor="#d08a4e" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#fbe4c0" stopOpacity="0.95" />
+          <stop offset="0%" stopColor="#5f7284" stopOpacity="0.05" />
+          <stop offset="55%" stopColor="#3d4f61" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#24303b" stopOpacity="0.95" />
         </linearGradient>
         <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3.2" result="b" />
@@ -100,7 +100,7 @@ export function VortexField() {
         ))}
       </g>
 
-      {/* dispatched signals — one is "live" (cold signal teal), the rest copper */}
+      {/* dispatched signals — one is "live" (cold signal teal), the rest accent */}
       <g
         style={
           reduced
@@ -117,7 +117,7 @@ export function VortexField() {
             cx={d.x}
             cy={d.y}
             r={d.id === 0 ? 4.5 : 3}
-            fill={d.id === 0 ? "#5fb6b0" : "#e9a96a"}
+            fill={d.id === 0 ? "#5b7284" : "#5f7284"}
             filter="url(#soft-glow)"
           />
         ))}
@@ -125,7 +125,7 @@ export function VortexField() {
 
       {/* survey tick — a small "you are here" marker on the outer spiral */}
       <g>
-        <circle cx={tick.x} cy={tick.y} r={2.5} fill="#c9a227" />
+        <circle cx={tick.x} cy={tick.y} r={2.5} fill="#a8905f" />
         <line
           x1={tick.x}
           y1={tick.y}
@@ -157,7 +157,7 @@ export function VortexField() {
         cy={C}
         r={7}
         fill="none"
-        stroke="#5fb6b0"
+        stroke="#5b7284"
         strokeWidth={1.2}
         opacity={0.7}
         className="pulse-ring"

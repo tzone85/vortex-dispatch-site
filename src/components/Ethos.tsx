@@ -12,7 +12,7 @@ export function Ethos() {
           title={
             <>
               We care about the boring parts,{" "}
-              <span className="font-serif-accent text-copper-bright">because you will live in them.</span>
+              <span className="font-serif-accent text-accent-bright">because you will live in them.</span>
             </>
           }
         />
@@ -21,7 +21,7 @@ export function Ethos() {
           {principles.map((p, i) => (
             <Reveal key={p.id} delay={i * 80} className="bg-void p-8 sm:p-10">
               <div className="flex items-start gap-5">
-                <span className="font-mono text-sm text-copper/70">0{i + 1}</span>
+                <span className="font-mono text-sm text-accent/70">0{i + 1}</span>
                 <div>
                   <h3 className="font-serif-accent text-2xl text-bone sm:text-[1.7rem]">{p.statement}</h3>
                   <p className="mt-3 text-[0.95rem] leading-relaxed text-bone-muted">{p.body}</p>
