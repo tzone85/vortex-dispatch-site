@@ -41,8 +41,15 @@ export function Footer() {
             © {company.foundedYear}–2026 {company.name} · {company.location}
           </p>
           <p className="mono-meta">
-            made with <span className="text-accent-bright">❤️</span> by vortex
-            dispatch
+            made with <span className="text-accent-bright">❤️</span> by{" "}
+            <a
+              href="https://vortexdispatch.co.za"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-accent-bright transition-colors"
+            >
+              vortex dispatch
+            </a>
           </p>
           <nav className="flex flex-wrap gap-x-7 gap-y-2">
             <a
