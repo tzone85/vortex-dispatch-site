@@ -7,4 +7,5 @@ export * from "./work";
 export * from "./process";
 export * from "./principles";
 export * from "./seo";
+export * from "./faq";
 export * from "./geometry";

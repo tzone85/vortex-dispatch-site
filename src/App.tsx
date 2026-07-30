@@ -6,6 +6,7 @@ import { Capabilities } from "./components/Capabilities";
 import { Work } from "./components/Work";
 import { Process } from "./components/Process";
 import { Ethos } from "./components/Ethos";
+import { Faq } from "./components/Faq";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { JsonLd } from "./components/JsonLd";
@@ -35,6 +36,7 @@ function HomePage() {
         <Work />
         <Process />
         <Ethos />
+        <Faq />
         <Contact />
       </main>
       <Footer />

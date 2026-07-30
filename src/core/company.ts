@@ -10,7 +10,7 @@ export const company: CompanyProfile = {
   headline: "We build the software your business",
   headlineAccent: "runs on.",
   subhead:
-    "A commercial software studio in Cape Town. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling. Then we stay to keep them running.",
+    "A commercial software studio in Cape Town, South Africa. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling. Then we stay to keep them running.",
   positioning:
     "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
   email: "hello@vortexdispatch.co.za",

@@ -69,6 +69,13 @@ export function Work() {
                     {w.summary}
                   </p>
 
+                  <p className="mt-3 text-[0.78rem] leading-relaxed text-bone-faint">
+                    <span className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-accent/70">
+                      Proof —{" "}
+                    </span>
+                    {w.proof}
+                  </p>
+
                   <div className="mt-6 flex items-center justify-between border-t border-line pt-4">
                     <div className="flex flex-wrap items-center gap-1.5 font-mono text-[0.66rem] text-bone-faint">
                       {w.stack.map((s, si) => (
