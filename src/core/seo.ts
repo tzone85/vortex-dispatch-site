@@ -1,10 +1,15 @@
 import { brandAssets, brandUrl } from "./brand";
-import type { CompanyProfile, SeoMeta, WorkItem } from "./types";
+import type { CompanyProfile, FaqEntry, SeoMeta, WorkItem } from "./types";
 
-/** Build the page's <title>/description/canonical from the company profile. */
+/**
+ * Build the page's <title>/description/canonical from the company profile.
+ * The title states the trade and the country outright — "Vortex Dispatch"
+ * collides with US truck-dispatching brands, so the entity must disambiguate
+ * itself in the first line machines read.
+ */
 export function buildSeoMeta(c: CompanyProfile): SeoMeta {
   return {
-    title: `${c.name} — ${c.tagline.replace(/\.$/, "")}`,
+    title: `${c.name} — commercial software studio in ${c.location}`,
     description: c.subhead,
     canonical: c.siteUrl,
   };
@@ -22,7 +27,7 @@ export function buildOrganizationJsonLd(
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "ProfessionalService"],
         "@id": `${c.siteUrl}/#organization`,
         name: c.name,
         url: c.siteUrl,
@@ -34,6 +39,8 @@ export function buildOrganizationJsonLd(
         foundingLocation: c.location,
         slogan: c.tagline,
         description: c.positioning,
+        disambiguatingDescription:
+          "A custom software studio in Cape Town, South Africa. Not a transport, trucking, fleet-dispatch, or TMS product — the name refers to how work is dispatched through the studio's build pipeline.",
         areaServed: {
           "@type": "Place",
           name: "South Africa",
@@ -52,6 +59,8 @@ export function buildOrganizationJsonLd(
           "https://github.com/vortex-dispatch",
         ],
         knowsAbout: [
+          "Custom Software Development",
+          "Web Application Development",
           "Software Development",
           "Marketplace Development",
           "Booking Platforms",
@@ -129,4 +138,43 @@ export function buildOrganizationJsonLd(
         })),
     ],
   };
+}
+
+/** schema.org FAQPage built from the canonical FAQ copy. */
+export function buildFaqJsonLd(
+  entries: readonly FaqEntry[],
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: entries.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Inject JSON-LD blocks into an HTML document, immediately before </head>.
+ * Used by the Vite build so structured data ships in the static HTML —
+ * most AI crawlers never execute JavaScript, so client-side injection alone
+ * is invisible to them.
+ */
+export function injectJsonLdIntoHtml(
+  html: string,
+  blocks: readonly Record<string, unknown>[],
+): string {
+  if (!html.includes("</head>")) {
+    throw new Error("injectJsonLdIntoHtml: document has no </head>");
+  }
+  const scripts = blocks
+    .map(
+      (b) => `<script type="application/ld+json">${JSON.stringify(b)}</script>`,
+    )
+    .join("\n    ");
+  return html.replace("</head>", `    ${scripts}\n  </head>`);
 }

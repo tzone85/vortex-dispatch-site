@@ -22,7 +22,9 @@ export function JsonLd() {
     if (location.pathname !== "/") {
       canonical = `${meta.canonical}${location.pathname}`;
     }
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    let link = document.querySelector(
+      'link[rel="canonical"]',
+    ) as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
       (link as HTMLLinkElement).rel = "canonical";
@@ -34,7 +36,12 @@ export function JsonLd() {
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", canonical);
 
-    // Inject Organization JSON-LD
+    // Inject Organization JSON-LD only when the static build didn't already
+    // (the Vite static-json-ld plugin embeds it at build time; this path
+    // covers dev mode and any host that strips head scripts).
+    if (document.querySelector('script[type="application/ld+json"]')) {
+      return;
+    }
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(buildOrganizationJsonLd(company, work));

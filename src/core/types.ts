@@ -46,9 +46,28 @@ export interface WorkItem {
   readonly domain: WorkDomain;
   readonly year: number;
   readonly summary: string;
+  /** One concrete, verifiable fact — answer engines cite facts, not adjectives. */
+  readonly proof: string;
   readonly stack: readonly string[];
   readonly status: "live" | "in-build";
   readonly href?: string;
+}
+
+/** AI-search intent categories the FAQ answers one-for-one. */
+export type FaqIntent =
+  | "education"
+  | "service-navigation"
+  | "comparison"
+  | "pricing"
+  | "support"
+  | "recommendation"
+  | "purchase";
+
+export interface FaqEntry {
+  readonly id: string;
+  readonly intent: FaqIntent;
+  readonly question: string;
+  readonly answer: string;
 }
 
 export interface PipelineStage {

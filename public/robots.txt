@@ -1,13 +1,22 @@
-# Allow all crawlers, including AI agents
+# Vortex Dispatch — software studio, Cape Town, South Africa
+# All crawlers welcome, AI answer engines explicitly so.
+
 User-agent: *
 Allow: /
 Disallow: /dist/
 
-# AI Agent Indexing
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
-User-agent: CCBot
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
@@ -16,13 +25,32 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (search + Gemini grounding)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+# Meta
+User-agent: meta-externalagent
+Allow: /
+
+# Others
 User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 User-agent: Slurp
@@ -30,6 +58,3 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://vortexdispatch.co.za/sitemap.xml
-
-# Crawl delay (in seconds) - 1 second to be respectful
-Crawl-delay: 1
