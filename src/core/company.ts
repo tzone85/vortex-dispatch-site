@@ -35,6 +35,7 @@ export const secondaryCta = {
 export const navigation: readonly NavItem[] = [
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "work", label: "Work", href: "#work" },
+  { id: "whatsapp-sales-desk", label: "Sales desk", href: "#whatsapp-sales-desk" },
   { id: "process", label: "How we build", href: "#process" },
   { id: "contact", label: "Contact", href: "#contact" },
 ] as const;

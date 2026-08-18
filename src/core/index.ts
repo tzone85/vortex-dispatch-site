@@ -9,3 +9,5 @@ export * from "./principles";
 export * from "./seo";
 export * from "./faq";
 export * from "./geometry";
+export * from "./revenueLeakOffer";
+export * from "./whatsappSalesDesk";

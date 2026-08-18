@@ -13,6 +13,9 @@ import { JsonLd } from "./components/JsonLd";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { CookiePolicy } from "./pages/CookiePolicy";
+import { RevenueLeakOffer } from "./components/RevenueLeakOffer";
+import { WhatsAppSalesDesk } from "./components/WhatsAppSalesDesk";
+import { WhatsAppSalesDeskPage } from "./pages/WhatsAppSalesDesk";
 
 function HomePage() {
   return (
@@ -34,6 +37,8 @@ function HomePage() {
         <SignalStrip />
         <Capabilities />
         <Work />
+        <RevenueLeakOffer />
+        <WhatsAppSalesDesk />
         <Process />
         <Ethos />
         <Faq />
@@ -51,6 +56,7 @@ export default function App() {
       <Route path="/terms" element={<TermsAndConditions />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/cookies" element={<CookiePolicy />} />
+      <Route path="/whatsapp-sales-desk" element={<WhatsAppSalesDeskPage />} />
     </Routes>
   );
 }
