@@ -4,6 +4,7 @@ import { capabilities } from "../capabilities";
 import { work } from "../work";
 import { pipeline } from "../process";
 import { principles } from "../principles";
+import * as core from "../index";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -88,5 +89,53 @@ describe("principles", () => {
   it("states at least three with unique ids", () => {
     expect(principles.length).toBeGreaterThanOrEqual(3);
     expect(uniqueIds(principles)).toBe(true);
+  });
+});
+
+describe("Revenue Leak Fix Sprint", () => {
+  it("publishes a fixed-scope offer with an upgrade credit and honest boundaries", () => {
+    const offer = (core as Record<string, unknown>).revenueLeakOffer as
+      | {
+          auditPrice: number;
+          sprintPrice: number;
+          durationDays: number;
+          deliverables: readonly string[];
+          exclusions: readonly string[];
+          cta: { mailto: string };
+        }
+      | undefined;
+
+    expect(offer).toBeDefined();
+    expect(offer?.auditPrice).toBe(2500);
+    expect(offer?.sprintPrice).toBe(7500);
+    expect(offer?.durationDays).toBe(5);
+    expect(offer?.deliverables.length).toBeGreaterThanOrEqual(5);
+    expect(offer?.exclusions).toContain("Lead-volume guarantees");
+    expect(offer?.cta.mailto).toContain("Revenue%20Leak%20Fix%20Sprint");
+  });
+});
+
+describe("WhatsApp Sales Desk Sprint", () => {
+  it("packages a narrow inbox cleanup offer with clear pricing and a direct CTA", () => {
+    const offer = (core as Record<string, unknown>).whatsappSalesDesk as
+      | {
+          diagnosticPrice: number;
+          sprintPrice: number;
+          durationDays: number;
+          deliverables: readonly string[];
+          exclusions: readonly string[];
+          qualification: string;
+          cta: { mailto: string };
+        }
+      | undefined;
+
+    expect(offer).toBeDefined();
+    expect(offer?.diagnosticPrice).toBe(950);
+    expect(offer?.sprintPrice).toBe(2950);
+    expect(offer?.durationDays).toBe(3);
+    expect(offer?.deliverables.length).toBeGreaterThanOrEqual(5);
+    expect(offer?.exclusions).toContain("Full CRM migrations");
+    expect(offer?.qualification).toMatch(/WhatsApp enquiries/i);
+    expect(offer?.cta.mailto).toContain("WhatsApp%20Sales%20Desk%20Sprint");
   });
 });

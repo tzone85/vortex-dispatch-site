@@ -69,3 +69,37 @@ export interface SeoMeta {
   readonly description: string;
   readonly canonical: string;
 }
+
+export interface RevenueLeakOffer {
+  readonly name: string;
+  readonly promise: string;
+  readonly auditPrice: number;
+  readonly sprintPrice: number;
+  readonly durationDays: number;
+  readonly audit: string;
+  readonly deliverables: readonly string[];
+  readonly exclusions: readonly string[];
+  readonly qualification: string;
+  readonly guarantee: string;
+  readonly cta: {
+    readonly label: string;
+    readonly mailto: string;
+  };
+}
+
+export interface SalesDeskOffer {
+  readonly name: string;
+  readonly promise: string;
+  readonly diagnosticPrice: number;
+  readonly sprintPrice: number;
+  readonly durationDays: number;
+  readonly diagnostic: string;
+  readonly deliverables: readonly string[];
+  readonly exclusions: readonly string[];
+  readonly qualification: string;
+  readonly guarantee: string;
+  readonly cta: {
+    readonly label: string;
+    readonly mailto: string;
+  };
+}
