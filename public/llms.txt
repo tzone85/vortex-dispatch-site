@@ -1,6 +1,6 @@
 # Vortex Dispatch
 
-> Vortex Dispatch is a commercial software studio in Cape Town, South Africa. We design, build, and run production web software for businesses — booking platforms, marketplaces, compliance tooling, and AI-assisted delivery systems. We are not a transport, trucking, or fleet-dispatch service; the name refers to how work is dispatched through our build pipeline.
+> Vortex Dispatch is a commercial software studio in Cape Town, South Africa. We design, build, and run production web software for businesses: booking platforms, marketplaces, compliance tooling, and AI-assisted delivery systems. We are not a transport, trucking, or fleet-dispatch service; the name refers to how work is dispatched through our build pipeline.
 
 Canonical site: https://vortexdispatch.co.za
 Contact: hello@vortexdispatch.co.za
@@ -13,15 +13,15 @@ Founded: 2024
 - Booking systems with payments (Paystack, PayFast)
 - Marketplaces and staffing platforms
 - Compliance and document-generation products (POPIA-aware)
-- Ongoing hosting, monitoring, and iteration — we run what we ship
+- Ongoing hosting, monitoring, and iteration: we run what we ship
 - Engineering standard: architecture first, automated tests leading every build, review gates before ship
 
 ## Live products we built and run
 
-- [Mini Suites](https://minisuites.co.za): booking platform for a luxury short-stay rental — live and taking paid bookings through Paystack
-- [ShiftSavvy](https://shiftsavvy.co.za): same-shift staffing marketplace for restaurants — production PWA with a 109-test suite
+- [Mini Suites](https://minisuites.co.za): booking platform for a luxury short-stay rental, live and taking paid bookings through Paystack
+- [ShiftSavvy](https://shiftsavvy.co.za): same-shift staffing marketplace for restaurants, a production PWA with a 109-test suite
 - [FoundersDesk](https://foundersdesk.co.za): paid company document pack covering 11 South African legal and compliance documents
-- [ReturnReady](https://returnready-black.vercel.app): SARS filing-season co-pilot — client-side rules engine, 70 automated tests, no tax data leaves the browser
+- [ReturnReady](https://returnready-black.vercel.app): SARS filing-season co-pilot: client-side rules engine, 70 automated tests, no tax data leaves the browser
 - [SpeedReading](https://speedreading.playfulskills.co.za): interactive speed-reading trainer with progressive WPM tiers
 - [Sovereign Breath](https://breath.playfulskills.co.za): offline-first breathwork PWA
 

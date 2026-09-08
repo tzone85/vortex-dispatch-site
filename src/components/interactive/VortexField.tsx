@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useId, useMemo } from "react";
 import { vortexArcs, spiralPoint } from "@/core";
 import { usePrefersReducedMotion } from "../hooks";
 
@@ -9,13 +9,23 @@ const MAX_R = 208;
 /**
  * The studio's signature: a logarithmic-spiral vortex that draws operational
  * complexity inward to a bright core, then dispatches it back out as signal dots.
- * Geometry is pure and unit-tested (see core/geometry) — this component only draws.
+ * Geometry is pure and unit-tested (see core/geometry) - this component only draws.
  */
 export function VortexField() {
   const reduced = usePrefersReducedMotion();
 
+  // Hero mounts this twice (hidden mobile copy + desktop). Paint servers must
+  // be unique per instance: url(#id) resolves to the first id in the document,
+  // and browsers will not paint a gradient defined in a display:none subtree.
+  const uid = useId().replace(/[^a-zA-Z0-9_-]/g, "");
+  const ids = {
+    core: `core-glow-${uid}`,
+    arc: `arc-stroke-${uid}`,
+    glow: `soft-glow-${uid}`,
+  };
+
   const arcs = useMemo(
-    // Three arms, like the nav mark — sparse enough to read as a galaxy,
+    // Three arms, like the nav mark - sparse enough to read as a galaxy,
     // not a fingerprint. All arms stay inside MAX_R (see core/geometry).
     () => vortexArcs({ count: 3, cx: C, cy: C, turns: 2.6, maxRadius: MAX_R }),
     [],
@@ -44,17 +54,17 @@ export function VortexField() {
       className="h-full w-full max-w-[520px]"
     >
       <defs>
-        <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+        <radialGradient id={ids.core} cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#24303b" stopOpacity="1" />
           <stop offset="35%" stopColor="#5f7284" stopOpacity="0.9" />
           <stop offset="100%" stopColor="#3d4f61" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="arc-stroke" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={ids.arc} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#5f7284" stopOpacity="0.05" />
           <stop offset="55%" stopColor="#3d4f61" stopOpacity="0.55" />
           <stop offset="100%" stopColor="#24303b" stopOpacity="0.95" />
         </linearGradient>
-        <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+        <filter id={ids.glow} x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3.2" result="b" />
           <feMerge>
             <feMergeNode in="b" />
@@ -63,7 +73,7 @@ export function VortexField() {
         </filter>
       </defs>
 
-      {/* instrument rings — the "observatory" scaffold */}
+      {/* instrument rings - the "observatory" scaffold */}
       {[0.42, 0.62, 0.82, 1].map((f, i) => (
         <circle
           key={f}
@@ -93,14 +103,14 @@ export function VortexField() {
             key={arc.id}
             d={arc.d}
             fill="none"
-            stroke="url(#arc-stroke)"
+            stroke={`url(#${ids.arc})`}
             strokeWidth={1.4}
             strokeLinecap="round"
           />
         ))}
       </g>
 
-      {/* dispatched signals — one is "live" (cold signal teal), the rest accent */}
+      {/* dispatched signals - one is "live" (cold signal teal), the rest accent */}
       <g
         style={
           reduced
@@ -118,12 +128,12 @@ export function VortexField() {
             cy={d.y}
             r={d.id === 0 ? 4.5 : 3}
             fill={d.id === 0 ? "#5b7284" : "#5f7284"}
-            filter="url(#soft-glow)"
+            filter={`url(#${ids.glow})`}
           />
         ))}
       </g>
 
-      {/* survey tick — a small "you are here" marker on the outer spiral */}
+      {/* survey tick - a small "you are here" marker on the outer spiral */}
       <g>
         <circle cx={tick.x} cy={tick.y} r={2.5} fill="#a8905f" />
         <line
@@ -141,7 +151,7 @@ export function VortexField() {
         cx={C}
         cy={C}
         r={54}
-        fill="url(#core-glow)"
+        fill={`url(#${ids.core})`}
         style={
           reduced
             ? undefined
@@ -151,7 +161,7 @@ export function VortexField() {
               }
         }
       />
-      <circle cx={C} cy={C} r={7} fill="#fdf1dc" filter="url(#soft-glow)" />
+      <circle cx={C} cy={C} r={7} fill="#fdf1dc" filter={`url(#${ids.glow})`} />
       <circle
         cx={C}
         cy={C}

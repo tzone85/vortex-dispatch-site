@@ -1,7 +1,7 @@
 import { company, primaryCta } from "@/core";
 import { Reveal } from "./Reveal";
 
-/** Closing call — a single, confident invitation. No form, just a real mailbox. */
+/** Closing call - a single, confident invitation. No form, just a real mailbox. */
 export function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-5 py-28 sm:px-8 sm:py-36">
@@ -19,7 +19,7 @@ export function Contact() {
         </Reveal>
         <Reveal delay={150} as="p" className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-bone-muted">
           Tell us the operational problem. We will tell you honestly whether software is the right
-          answer — and if it is, how we would build it.
+          answer, and if it is, how we would build it.
         </Reveal>
 
         <Reveal delay={220} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

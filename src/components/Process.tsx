@@ -10,7 +10,7 @@ const MARGIN = 96;
 const DUR = 7; // seconds for a signal to traverse the pipeline
 
 /**
- * "How we build" — a hand-authored SVG conduit. Nodes and the connecting path
+ * "How we build" - a hand-authored SVG conduit. Nodes and the connecting path
  * come from the pure, unit-tested layout functions; three signals ride the path
  * (SMIL animateMotion) unless the visitor prefers reduced motion.
  */
@@ -30,7 +30,7 @@ export function Process() {
             <span className="font-serif-accent text-accent-bright">Running software comes out.</span>
           </>
         }
-        lead="The same five stages every time. Tests lead, review gates, and we stay for the running — that discipline is the product."
+        lead="The same five stages every time. Tests lead, review gates, and we stay for the running. That discipline is the product."
       />
 
       <Reveal className="mt-14">

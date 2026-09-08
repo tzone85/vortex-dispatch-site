@@ -36,7 +36,7 @@ export function Nav() {
   /**
    * Close the overlay, then jump. The overlay locks body scroll, so a plain
    * anchor click fires while scrolling is still disabled and the jump is
-   * silently swallowed — scroll only after the unlock has been applied.
+   * silently swallowed - scroll only after the unlock has been applied.
    */
   const jumpFromMenu = (e: React.MouseEvent, href: string) => {
     if (!isHomePage) return; // legal pages navigate to /#section normally
@@ -64,7 +64,7 @@ export function Nav() {
         <a
           href="/"
           className="group flex items-center gap-2.5"
-          aria-label={`${company.name} — home`}
+          aria-label={`${company.name} home`}
         >
           <img
             src={brandAssets.logo64}

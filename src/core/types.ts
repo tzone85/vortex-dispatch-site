@@ -1,6 +1,6 @@
 /**
  * Framework-free domain types for the Vortex Dispatch studio site.
- * Nothing here imports React or the DOM — the domain is the stable core,
+ * Nothing here imports React or the DOM - the domain is the stable core,
  * and presentation depends on it (never the reverse).
  */
 
@@ -46,7 +46,7 @@ export interface WorkItem {
   readonly domain: WorkDomain;
   readonly year: number;
   readonly summary: string;
-  /** One concrete, verifiable fact — answer engines cite facts, not adjectives. */
+  /** One concrete, verifiable fact - answer engines cite facts, not adjectives. */
   readonly proof: string;
   readonly stack: readonly string[];
   readonly status: "live" | "in-build";

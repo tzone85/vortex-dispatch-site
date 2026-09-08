@@ -1,6 +1,6 @@
 import type { Principle } from "./types";
 
-/** The studio's ethos — the part that shows genuine care, said plainly. */
+/** The studio's ethos - the part that shows genuine care, said plainly. */
 export const principles: readonly Principle[] = [
   {
     id: "tested",
@@ -15,7 +15,7 @@ export const principles: readonly Principle[] = [
   {
     id: "clean",
     statement: "Clean where it counts.",
-    body: "Clear boundaries and small, honest modules — so the next change is cheap and the next engineer is not lost.",
+    body: "Clear boundaries and small, honest modules, so the next change is cheap and the next engineer is not lost.",
   },
   {
     id: "shipped",

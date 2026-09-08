@@ -16,7 +16,7 @@ interface StarfieldProps {
   className?: string;
 }
 
-/** A faint, warm starfield — texture for the night sky behind the vortex. */
+/** A faint, warm starfield - texture for the night sky behind the vortex. */
 export function Starfield({ count = 150, className = "" }: StarfieldProps) {
   const stars = useMemo(() => {
     const next = rng(20240711);

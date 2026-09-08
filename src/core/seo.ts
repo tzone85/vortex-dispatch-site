@@ -3,13 +3,13 @@ import type { CompanyProfile, FaqEntry, SeoMeta, WorkItem } from "./types";
 
 /**
  * Build the page's <title>/description/canonical from the company profile.
- * The title states the trade and the country outright — "Vortex Dispatch"
+ * The title states the trade and the country outright - "Vortex Dispatch"
  * collides with US truck-dispatching brands, so the entity must disambiguate
  * itself in the first line machines read.
  */
 export function buildSeoMeta(c: CompanyProfile): SeoMeta {
   return {
-    title: `${c.name} — commercial software studio in ${c.location}`,
+    title: `${c.name} | Commercial software studio in ${c.location}`,
     description: c.subhead,
     canonical: c.siteUrl,
   };
@@ -40,7 +40,7 @@ export function buildOrganizationJsonLd(
         slogan: c.tagline,
         description: c.positioning,
         disambiguatingDescription:
-          "A custom software studio in Cape Town, South Africa. Not a transport, trucking, fleet-dispatch, or TMS product — the name refers to how work is dispatched through the studio's build pipeline.",
+          "A custom software studio in Cape Town, South Africa. Not a transport, trucking, fleet-dispatch, or TMS product. The name refers to how work is dispatched through the studio's build pipeline.",
         areaServed: {
           "@type": "Place",
           name: "South Africa",
@@ -160,7 +160,7 @@ export function buildFaqJsonLd(
 
 /**
  * Inject JSON-LD blocks into an HTML document, immediately before </head>.
- * Used by the Vite build so structured data ships in the static HTML —
+ * Used by the Vite build so structured data ships in the static HTML -
  * most AI crawlers never execute JavaScript, so client-side injection alone
  * is invisible to them.
  */

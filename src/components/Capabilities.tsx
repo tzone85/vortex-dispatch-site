@@ -2,7 +2,7 @@ import { capabilities } from "@/core";
 import { SectionHead } from "./SectionHead";
 import { Reveal } from "./Reveal";
 
-/** What the studio sells — four cards, indexed, with deliverables. */
+/** What the studio sells - four cards, indexed, with deliverables. */
 export function Capabilities() {
   return (
     <section id="capabilities" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">

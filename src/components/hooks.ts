@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Reveal-on-scroll. Adds `.is-visible` the first time an element enters view,
- * then unobserves — the animation plays once, never thrashes.
+ * then unobserves - the animation plays once, never thrashes.
  */
 export function useReveal<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T | null>(null);

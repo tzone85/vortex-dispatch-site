@@ -3,7 +3,7 @@
  *
  * Two hand-built SVG pieces depend on this module: the hero *vortex* (a set of
  * logarithmic-spiral arcs) and the *dispatch pipeline* diagram. Keeping the maths
- * here — free of React and the DOM — means the shapes are unit-testable and the
+ * here - free of React and the DOM - means the shapes are unit-testable and the
  * components stay dumb renderers. (Single-responsibility: geometry computes, JSX draws.)
  */
 

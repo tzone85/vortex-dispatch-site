@@ -2,7 +2,7 @@
   "organization": {
     "name": "Vortex Dispatch",
     "tagline": "Commercial software, engineered to run.",
-    "description": "A commercial software studio. We design, build, and ship product-grade systems — marketplaces, booking platforms, compliance tooling, and AI-assisted delivery — then stay to keep them running.",
+    "description": "A commercial software studio. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling, and AI-assisted delivery. Then we stay to keep them running.",
     "positioning": "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
     "location": "Cape Town, South Africa",
     "country": "ZA",
@@ -52,7 +52,7 @@
       "name": "Mini Suites",
       "domain": "booking",
       "year": 2025,
-      "description": "A booking platform for a luxury short-stay rental — real-time availability, secure deposits, and iCal sync with the big channels.",
+      "description": "A booking platform for a luxury short-stay rental: real-time availability, secure deposits, and iCal sync with the big channels.",
       "status": "live",
       "url": "https://minisuites.co.za",
       "stack": ["Laravel", "Paystack", "Laravel Cloud"]
@@ -62,7 +62,7 @@
       "name": "ShiftSavvy",
       "domain": "marketplace",
       "year": 2025,
-      "description": "A same-shift staffing marketplace for restaurants — venues post gaps, vetted staff claim them, and the schedule fills itself.",
+      "description": "A same-shift staffing marketplace for restaurants: venues post gaps, vetted staff claim them, and the schedule fills itself.",
       "status": "live",
       "url": "https://shiftsavvy.co.za",
       "stack": ["React", "Vite", "PWA"]
@@ -72,7 +72,7 @@
       "name": "FoundersDesk",
       "domain": "consumer",
       "year": 2025,
-      "description": "A resource platform for founders — tools, guides, and intelligence to navigate the early stage journey.",
+      "description": "A resource platform for founders: tools, guides, and intelligence to navigate the early stage journey.",
       "status": "live",
       "url": "https://foundersdesk.co.za",
       "stack": ["React", "Vite", "Next.js"]
@@ -82,7 +82,7 @@
       "name": "ReturnReady",
       "domain": "fintech",
       "year": 2026,
-      "description": "A filing-season co-pilot for SARS tax returns — a client-side rules engine that walks people through their submission, privately.",
+      "description": "A filing-season co-pilot for SARS tax returns: a client-side rules engine that walks people through their submission, privately.",
       "status": "live",
       "url": "https://returnready-black.vercel.app",
       "stack": ["React", "Vite", "Rules engine"]
@@ -92,7 +92,7 @@
       "name": "SpeedReading",
       "domain": "consumer",
       "year": 2025,
-      "description": "An interactive speed reading platform — progressive training, comprehension tracking, and personalized techniques to help users read faster while understanding more.",
+      "description": "An interactive speed reading platform: progressive training, comprehension tracking, and personalized techniques to help users read faster while understanding more.",
       "status": "live",
       "url": "https://speedreading.playfulskills.co.za",
       "stack": ["React", "Vite", "Psychology-based"]
@@ -102,7 +102,7 @@
     {
       "path": "/",
       "title": "Home",
-      "description": "Vortex Dispatch — Commercial software studio",
+      "description": "Vortex Dispatch: Commercial software studio",
       "canonical": "https://vortexdispatch.co.za/"
     },
     {

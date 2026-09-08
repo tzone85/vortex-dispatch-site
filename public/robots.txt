@@ -1,4 +1,4 @@
-# Vortex Dispatch — software studio, Cape Town, South Africa
+# Vortex Dispatch, software studio, Cape Town, South Africa
 # All crawlers welcome, AI answer engines explicitly so.
 
 User-agent: *

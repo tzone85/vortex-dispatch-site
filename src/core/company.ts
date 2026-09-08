@@ -2,7 +2,7 @@ import type { CompanyProfile, NavItem } from "./types";
 
 /**
  * Canonical identity for Vortex Dispatch. Pure data, consumed by every section
- * and by the SEO builders. Edit copy here — never in the components.
+ * and by the SEO builders. Edit copy here - never in the components.
  */
 export const company: CompanyProfile = {
   name: "Vortex Dispatch",
@@ -23,7 +23,7 @@ export const primaryCta = {
   label: "Start a conversation",
   href: "#contact",
   mailto: `mailto:${company.email}?subject=${encodeURIComponent(
-    "Project inquiry — Vortex Dispatch",
+    "Project inquiry: Vortex Dispatch",
   )}`,
 } as const;
 

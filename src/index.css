@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /*
-  VORTEX DISPATCH — "The Gallery"
+  VORTEX DISPATCH - "The Gallery"
   Warm gallery white · slate-navy ink · old-style serif · champagne whisper.
-  Flat corners, hairline rules, letterspaced caps — private-bank restraint.
+  Flat corners, hairline rules, letterspaced caps - private-bank restraint.
   Deliberately NO purple, NO neon, NO gradient buttons, NO system fonts.
 */
 @theme {
-  /* surfaces — gallery white */
+  /* surfaces - gallery white */
   --color-void: #f1f0ec;
   --color-void-2: #eae9e4;
   --color-panel: #ffffff;
@@ -22,13 +22,13 @@
   --color-line: rgba(46, 58, 69, 0.14);
   --color-line-strong: rgba(46, 58, 69, 0.3);
 
-  /* accents — slate navy, champagne whisper */
+  /* accents - slate navy, champagne whisper */
   --color-accent: #3d4f61;
   --color-accent-bright: #24303b;
   --color-accent-deep: #1b242c;
   --color-brass: #a8905f;
 
-  /* the one cold accent — live/interactive only */
+  /* the one cold accent - live/interactive only */
   --color-signal: #5b7284;
 
   --font-display: "EB Garamond", ui-serif, Georgia, serif;
@@ -92,7 +92,7 @@ h3,
   background-image: linear-gradient(180deg, #e7e6e1 0%, #f1f0ec 42%, #f1f0ec 100%);
 }
 
-/* film grain — subtle texture so flat blacks never look like default CSS */
+/* film grain - subtle texture so flat blacks never look like default CSS */
 .grain {
   position: fixed;
   inset: 0;
@@ -267,7 +267,7 @@ h3,
   background: #f7f6f2;
 }
 
-/* compact CTAs on phones — the letterspaced caps label is wide */
+/* compact CTAs on phones - the letterspaced caps label is wide */
 @media (max-width: 640px) {
   .btn-primary,
   .btn-ghost {

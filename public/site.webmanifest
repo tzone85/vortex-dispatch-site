@@ -1,7 +1,7 @@
 {
   "name": "Vortex Dispatch",
   "short_name": "Vortex",
-  "description": "Commercial software studio — product-grade systems engineered to run.",
+  "description": "Commercial software studio. Product-grade systems engineered to run.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f1f0ec",

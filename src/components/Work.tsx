@@ -13,7 +13,7 @@ const DOMAIN_LABEL: Record<WorkDomain, string> = {
   "ai-delivery": "AI delivery",
 };
 
-/** Selected shipped work — one per domain, to show range. */
+/** Selected shipped work - one per domain, to show range. */
 export function Work() {
   return (
     <section id="work" className="border-t border-line bg-void-2/40">
@@ -28,7 +28,7 @@ export function Work() {
               </span>
             </>
           }
-          lead="A slice of what we have built — booking, marketplace, fintech, consumer, and wellness."
+          lead="A slice of what we have built: booking, marketplace, fintech, consumer, and wellness."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -71,7 +71,7 @@ export function Work() {
 
                   <p className="mt-3 text-[0.78rem] leading-relaxed text-bone-faint">
                     <span className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-accent/70">
-                      Proof —{" "}
+                      Proof:{" "}
                     </span>
                     {w.proof}
                   </p>

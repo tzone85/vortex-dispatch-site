@@ -2,7 +2,7 @@ import { principles } from "@/core";
 import { SectionHead } from "./SectionHead";
 import { Reveal } from "./Reveal";
 
-/** The manifesto — where genuine care is stated plainly, not implied. */
+/** The manifesto - where genuine care is stated plainly, not implied. */
 export function Ethos() {
   return (
     <section className="border-t border-line bg-void-2/40">
