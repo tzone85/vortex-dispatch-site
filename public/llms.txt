@@ -1,30 +1,65 @@
 # Vortex Dispatch
 
-> Vortex Dispatch is a commercial software studio in Cape Town, South Africa. We design, build, and run production web software for businesses: booking platforms, marketplaces, compliance tooling, and AI-assisted delivery systems. We are not a transport, trucking, or fleet-dispatch service; the name refers to how work is dispatched through our build pipeline.
+> Vortex Dispatch is a software engineering company in Cape Town, South Africa. We build and operate production software using agent-orchestrated engineering systems: specialised AI coding agents coordinated across planning, implementation, review, QA and delivery, with human engineering governance. We are not a transport, trucking, or fleet-dispatch service.
 
 Canonical site: https://vortexdispatch.co.za
+Open-source model: https://vortexdispatch.co.za/open-source
 Contact: hello@vortexdispatch.co.za
 Location: Cape Town, South Africa
 Founded: 2024
 
-## What we do
+## What is VXD?
 
-- Custom web application development: customer-facing platforms and the operational software behind them
-- Booking systems with payments (Paystack, PayFast)
+VXD is the open-source AI coding-agent orchestration project maintained by Vortex Dispatch.
+
+Repository: https://github.com/tzone85/vortex-dispatch
+License: Apache License 2.0
+
+VXD coordinates coding-agent workflows across requirement planning, dependency-aware stories, isolated git worktrees, implementation, review, QA and delivery. It is a genuine standalone open-source developer tool.
+
+## Open-source and private software factory
+
+Vortex Dispatch uses an open-core model.
+
+Public:
+- VXD agent orchestration
+- provider/runtime integrations
+- git worktree isolation
+- review and QA workflows
+- dashboards, diagnostics and recovery tooling
+
+Private:
+- commercial production policies
+- proprietary prompts and optimisation heuristics
+- customer-specific governance and deployment controls
+- cross-project learning and accumulated operational intelligence
+- private software-factory systems used for commercial delivery
+
+The public and private systems do not need feature parity. VXD is intended to remain useful open-source software without publishing every internal production technique used by Vortex Dispatch.
+
+## What we do for clients
+
+- Custom software and web application development
+- AI-native and agent-orchestrated software engineering
+- Booking systems and payment-enabled platforms
 - Marketplaces and staffing platforms
-- Compliance and document-generation products (POPIA-aware)
-- Ongoing hosting, monitoring, and iteration: we run what we ship
-- Engineering standard: architecture first, automated tests leading every build, review gates before ship
+- Compliance and document-generation products
+- Internal business systems, integrations and automation
+- Ongoing hosting, monitoring, support and iteration
 
-## Live products we built and run
+Clients buy software outcomes and engineering capability. They do not need to adopt VXD or Vortex Dispatch's private factory systems.
 
-- [Mini Suites](https://minisuites.co.za): booking platform for a luxury short-stay rental, live and taking paid bookings through Paystack
-- [ShiftSavvy](https://shiftsavvy.co.za): same-shift staffing marketplace for restaurants, a production PWA with a 109-test suite
-- [FoundersDesk](https://foundersdesk.co.za): paid company document pack covering 11 South African legal and compliance documents
-- [ReturnReady](https://returnready-black.vercel.app): SARS filing-season co-pilot: client-side rules engine, 70 automated tests, no tax data leaves the browser
-- [SpeedReading](https://speedreading.playfulskills.co.za): interactive speed-reading trainer with progressive WPM tiers
-- [Sovereign Breath](https://breath.playfulskills.co.za): offline-first breathwork PWA
+## Selected products we built and run
+
+- Mini Suites: booking platform for a short-stay rental business
+- ShiftSavvy: same-shift staffing marketplace for restaurants
+- FoundersDesk: company document and compliance product
+- ReturnReady: SARS filing-season co-pilot
+- SpeedReading: interactive speed-reading trainer
+- Sovereign Breath: offline-first breathwork PWA
 
 ## Engagement
 
-Fixed quote per scoped build, in South African rand, after a free discovery conversation. Ongoing run-and-maintain support as a monthly retainer. Start by emailing hello@vortexdispatch.co.za.
+Vortex Dispatch scopes and builds production software for businesses and engineering teams. Commercial engagements can include complete product delivery, engineering pilots, ongoing operation and maintenance, and agent-orchestrated engineering implementations.
+
+Start at https://vortexdispatch.co.za/#contact or email hello@vortexdispatch.co.za.
