@@ -18,7 +18,6 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-void" />
 
-      {/* phones: the spiral turns softly behind the hero copy */}
       <div
         className="pointer-events-none absolute -right-28 top-16 w-[420px] opacity-30 lg:hidden"
         aria-hidden="true"
@@ -34,7 +33,7 @@ export function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-signal" />
             </span>
             <span className="mono-meta uppercase tracking-[0.2em] text-bone-muted">
-              Taking on new projects
+              Taking on new engineering pilots
             </span>
           </span>
 
@@ -50,7 +49,7 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3.5">
-            <a href={primaryCta.mailto} className="btn-primary">
+            <a href={primaryCta.href} className="btn-primary">
               {primaryCta.label}
               <Arrow />
             </a>
