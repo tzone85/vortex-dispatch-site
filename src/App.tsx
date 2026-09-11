@@ -16,6 +16,7 @@ import { CookiePolicy } from "./pages/CookiePolicy";
 import { RevenueLeakOffer } from "./components/RevenueLeakOffer";
 import { WhatsAppSalesDesk } from "./components/WhatsAppSalesDesk";
 import { WhatsAppSalesDeskPage } from "./pages/WhatsAppSalesDesk";
+import { OpenSourcePage } from "./pages/OpenSource";
 
 function HomePage() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/open-source" element={<OpenSourcePage />} />
       <Route path="/terms" element={<TermsAndConditions />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/cookies" element={<CookiePolicy />} />
