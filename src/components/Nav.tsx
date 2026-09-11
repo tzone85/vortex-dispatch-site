@@ -17,7 +17,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Menu overlay: lock page scroll while open, close on Escape.
   useEffect(() => {
     if (!menuOpen) return;
     document.body.style.overflow = "hidden";
@@ -31,15 +30,13 @@ export function Nav() {
     };
   }, [menuOpen]);
 
-  const hrefFor = (href: string) => (isHomePage ? href : `/${href}`);
+  const hrefFor = (href: string) => {
+    if (href.startsWith("/")) return href;
+    return isHomePage ? href : `/${href}`;
+  };
 
-  /**
-   * Close the overlay, then jump. The overlay locks body scroll, so a plain
-   * anchor click fires while scrolling is still disabled and the jump is
-   * silently swallowed - scroll only after the unlock has been applied.
-   */
   const jumpFromMenu = (e: React.MouseEvent, href: string) => {
-    if (!isHomePage) return; // legal pages navigate to /#section normally
+    if (!isHomePage || !href.startsWith("#")) return;
     e.preventDefault();
     setMenuOpen(false);
     requestAnimationFrame(() =>
