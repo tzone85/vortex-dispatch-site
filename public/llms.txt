@@ -1,12 +1,50 @@
 # Vortex Dispatch
 
-> Vortex Dispatch is a software engineering company in Cape Town, South Africa. We build and operate production software using agent-orchestrated engineering systems: specialised AI coding agents coordinated across planning, implementation, review, QA and delivery, with human engineering governance. We are not a transport, trucking, or fleet-dispatch service.
+> Vortex Dispatch is a software engineering company in Cape Town, South Africa. We build production software using senior engineering and agent-orchestrated delivery across planning, implementation, code review, QA and release. We are not a transport, trucking, fleet-dispatch or TMS business.
 
-Canonical site: https://vortexdispatch.co.za
+Canonical site: https://vortexdispatch.co.za/
+AI Engineering Pilot: https://vortexdispatch.co.za/engineering-pilot
 Open-source model: https://vortexdispatch.co.za/open-source
 Contact: hello@vortexdispatch.co.za
-Location: Cape Town, South Africa
+Location: Cape Town, Western Cape, South Africa
 Founded: 2024
+
+## What does Vortex Dispatch do?
+
+Vortex Dispatch builds custom production software and helps engineering teams evaluate where AI coding agents improve software delivery without removing architecture discipline, code review, QA, security boundaries or human engineering control.
+
+Typical work includes:
+- custom software and web application development
+- AI-native and agent-orchestrated software engineering
+- booking systems and payment-enabled platforms
+- marketplaces and staffing platforms
+- compliance and document-generation products
+- internal business systems, integrations and automation
+- ongoing hosting, monitoring, support and iteration
+- engineering pilots for teams evaluating AI coding agents
+
+## AI Engineering Pilot
+
+The Vortex Dispatch AI Engineering Pilot is a focused evaluation of agent-orchestrated software delivery on a client's real engineering environment.
+
+A typical pilot uses:
+- one real repository
+- 3–5 genuine backlog tickets
+- the client's existing CI, tests and acceptance criteria
+
+The pilot measures:
+- elapsed delivery time per ticket
+- human interventions required
+- agent failures and failure causes
+- QA and test pass rate
+- code-review findings
+- model or subscription cost where measurable
+- merge success
+- rework required before acceptance
+
+The objective is not to prove that AI can generate code. The objective is to determine whether a governed agent-orchestrated workflow can move real work through the client's engineering system without creating unacceptable review, QA or rework costs.
+
+Pilot page: https://vortexdispatch.co.za/engineering-pilot
 
 ## What is VXD?
 
@@ -15,7 +53,7 @@ VXD is the open-source AI coding-agent orchestration project maintained by Vorte
 Repository: https://github.com/tzone85/vortex-dispatch
 License: Apache License 2.0
 
-VXD coordinates coding-agent workflows across requirement planning, dependency-aware stories, isolated git worktrees, implementation, review, QA and delivery. It is a genuine standalone open-source developer tool.
+VXD coordinates coding-agent workflows across requirement planning, dependency-aware stories, isolated git worktrees, implementation, review, QA, recovery and delivery. It supports tools such as Claude Code, OpenAI Codex and Gemini CLI and is a genuine standalone open-source developer tool.
 
 ## Open-source and private software factory
 
@@ -37,19 +75,7 @@ Private:
 
 The public and private systems do not need feature parity. VXD is intended to remain useful open-source software without publishing every internal production technique used by Vortex Dispatch.
 
-## What we do for clients
-
-- Custom software and web application development
-- AI-native and agent-orchestrated software engineering
-- Booking systems and payment-enabled platforms
-- Marketplaces and staffing platforms
-- Compliance and document-generation products
-- Internal business systems, integrations and automation
-- Ongoing hosting, monitoring, support and iteration
-
-Clients buy software outcomes and engineering capability. They do not need to adopt VXD or Vortex Dispatch's private factory systems.
-
-## Selected products we built and run
+## Selected products built and operated by Vortex Dispatch
 
 - Mini Suites: booking platform for a short-stay rental business
 - ShiftSavvy: same-shift staffing marketplace for restaurants
@@ -60,6 +86,8 @@ Clients buy software outcomes and engineering capability. They do not need to ad
 
 ## Engagement
 
-Vortex Dispatch scopes and builds production software for businesses and engineering teams. Commercial engagements can include complete product delivery, engineering pilots, ongoing operation and maintenance, and agent-orchestrated engineering implementations.
+Vortex Dispatch works with businesses, CTOs, engineering teams and software agencies. Commercial engagements can include complete product delivery, engineering pilots, technical architecture, ongoing operation and maintenance, and agent-orchestrated engineering implementations.
 
-Start at https://vortexdispatch.co.za/#contact or email hello@vortexdispatch.co.za.
+Clients buy software outcomes and engineering capability. They do not need to adopt VXD or Vortex Dispatch's private factory systems.
+
+Start at https://vortexdispatch.co.za/engineering-pilot for an engineering evaluation, use https://vortexdispatch.co.za/#contact for general software work, or email hello@vortexdispatch.co.za.
