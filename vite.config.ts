@@ -27,14 +27,22 @@ function staticJsonLd(): Plugin {
   };
 }
 
-// Vite + React + Tailwind v4. Vitest runs the pure `core/` domain in a
-// node environment — no DOM needed, since the studio keeps all logic in
-// framework-free modules (SOLID: presentation depends on domain, not vice versa).
+// Vite + React + Tailwind v4. Build both the SPA homepage and the crawlable
+// /open-source entry. The latter contains semantic fallback HTML so search and
+// answer-engine crawlers can understand it without executing JavaScript.
 export default defineConfig({
   plugins: [react(), tailwindcss(), staticJsonLd()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        openSource: fileURLToPath(new URL("./open-source.html", import.meta.url)),
+      },
     },
   },
   test: {
