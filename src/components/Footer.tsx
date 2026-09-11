@@ -1,4 +1,5 @@
 import { brandAssets, company, navigation } from "@/core";
+import { openConsentPreferences } from "../core/consent";
 
 /** Footer. Signature credit is deliberately lowercase, per brand. */
 export function Footer() {
@@ -91,6 +92,13 @@ export function Footer() {
             >
               Cookies
             </a>
+            <button
+              type="button"
+              className="text-sm text-bone-muted hover:text-accent transition-colors"
+              onClick={openConsentPreferences}
+            >
+              Cookie settings
+            </button>
           </nav>
         </div>
       </div>
