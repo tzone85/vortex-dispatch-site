@@ -1,28 +1,29 @@
 {
   "organization": {
     "name": "Vortex Dispatch",
-    "tagline": "Commercial software, engineered to run.",
-    "description": "A commercial software studio. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling, and AI-assisted delivery. Then we stay to keep them running.",
-    "positioning": "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
-    "location": "Cape Town, South Africa",
+    "tagline": "Production software, engineered to run.",
+    "description": "A software engineering company in Cape Town, South Africa. Vortex Dispatch combines senior engineering with agent-orchestrated delivery across planning, implementation, code review, QA and release.",
+    "positioning": "We build custom production software and help engineering teams evaluate where AI coding agents improve throughput without surrendering architecture, testing, review or human control.",
+    "location": "Cape Town, Western Cape, South Africa",
     "country": "ZA",
     "founded": 2024,
     "email": "hello@vortexdispatch.co.za",
-    "website": "https://vortexdispatch.co.za",
+    "website": "https://vortexdispatch.co.za/",
     "social": {
       "github": "https://github.com/tzone85",
-      "github_org": "https://github.com/vortex-dispatch"
+      "vxd_repository": "https://github.com/tzone85/vortex-dispatch"
     }
   },
   "services": {
     "categories": [
-      "Software Development",
+      "Custom Software Engineering",
+      "AI-Native Software Engineering",
+      "AI Engineering Delivery Pilot",
       "Marketplace Development",
       "Booking Platform Development",
-      "Compliance Tool Development",
-      "AI Integration",
-      "SaaS Development",
-      "Technical Consulting"
+      "Compliance Software Development",
+      "Technical Architecture",
+      "Software Operations and Support"
     ],
     "technologies": [
       "React",
@@ -35,16 +36,43 @@
       "AWS",
       "Vercel",
       "PostgreSQL",
-      "Redis"
+      "Redis",
+      "Claude Code",
+      "OpenAI Codex",
+      "Gemini CLI"
     ],
     "specializations": [
-      "Product Architecture",
+      "Software Architecture",
+      "Agent-Orchestrated Delivery",
+      "AI Coding Agent Governance",
+      "Code Review",
+      "Software QA",
       "Test-Driven Development",
-      "AI-Assisted Delivery",
-      "Performance Optimization",
-      "Security Implementation",
+      "Production Reliability",
       "Compliance Solutions"
     ]
+  },
+  "engineering_pilot": {
+    "name": "AI Engineering Delivery Pilot",
+    "url": "https://vortexdispatch.co.za/engineering-pilot",
+    "scope": "One real repository and 3–5 genuine backlog tickets",
+    "measures": [
+      "Elapsed delivery time per ticket",
+      "Human interventions required",
+      "Agent failures and failure causes",
+      "QA and test pass rate",
+      "Code-review findings",
+      "Model or subscription cost where measurable",
+      "Merge success",
+      "Rework required before acceptance"
+    ]
+  },
+  "open_source": {
+    "project": "VXD",
+    "repository": "https://github.com/tzone85/vortex-dispatch",
+    "license": "Apache-2.0",
+    "url": "https://vortexdispatch.co.za/open-source",
+    "description": "Open-source AI coding-agent orchestration for planning, isolated implementation, code review, QA, recovery and delivery workflows."
   },
   "portfolio": [
     {
@@ -101,9 +129,21 @@
   "pages": [
     {
       "path": "/",
-      "title": "Home",
-      "description": "Vortex Dispatch: Commercial software studio",
+      "title": "Vortex Dispatch | AI-Native Software Engineering & Custom Software",
+      "description": "Senior software engineering combined with governed AI-agent delivery for production systems.",
       "canonical": "https://vortexdispatch.co.za/"
+    },
+    {
+      "path": "/engineering-pilot",
+      "title": "AI Engineering Pilot | Vortex Dispatch",
+      "description": "Evaluate agent-orchestrated software delivery on one real repository and 3–5 backlog tickets.",
+      "canonical": "https://vortexdispatch.co.za/engineering-pilot"
+    },
+    {
+      "path": "/open-source",
+      "title": "Open Source VXD & Private Software Factory | Vortex Dispatch",
+      "description": "How Vortex Dispatch separates the public VXD project from private commercial software-factory systems.",
+      "canonical": "https://vortexdispatch.co.za/open-source"
     },
     {
       "path": "/privacy",
@@ -129,14 +169,17 @@
     "sitemap": "https://vortexdispatch.co.za/sitemap.xml",
     "robots": "https://vortexdispatch.co.za/robots.txt",
     "ai_robots": "https://vortexdispatch.co.za/.ai-robots.txt",
+    "llms": "https://vortexdispatch.co.za/llms.txt",
     "schema_org": true,
     "structured_data_types": [
       "Organization",
+      "ProfessionalService",
       "WebSite",
       "SoftwareApplication",
-      "LocalBusiness"
+      "Service",
+      "FAQPage"
     ],
     "language": "en-ZA",
-    "last_updated": "2026-07-16"
+    "last_updated": "2026-09-11"
   }
 }
