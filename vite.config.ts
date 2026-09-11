@@ -12,24 +12,24 @@ import { company } from "./src/core/company";
 import { work } from "./src/core/work";
 import { faq } from "./src/core/faq";
 
-// Structured data must live in the static HTML: most AI crawlers (GPTBot,
-// ClaudeBot, PerplexityBot) never execute JavaScript, so client-side JSON-LD
-// injection is invisible to them.
+// Structured data must live in static HTML because many search and answer-engine
+// crawlers do not execute the client application. Organization data can appear
+// site-wide; FAQ schema is only valid on the homepage where the FAQ is visible.
 function staticJsonLd(): Plugin {
   return {
     name: "static-json-ld",
-    transformIndexHtml(html) {
-      return injectJsonLdIntoHtml(html, [
-        buildOrganizationJsonLd(company, work),
-        buildFaqJsonLd(faq),
-      ]);
+    transformIndexHtml(html, ctx) {
+      const blocks = [buildOrganizationJsonLd(company, work)];
+      if (ctx.path === "/" || ctx.path === "/index.html") {
+        blocks.push(buildFaqJsonLd(faq));
+      }
+      return injectJsonLdIntoHtml(html, blocks);
     },
   };
 }
 
-// Vite + React + Tailwind v4. Build both the SPA homepage and the crawlable
-// /open-source entry. The latter contains semantic fallback HTML so search and
-// answer-engine crawlers can understand it without executing JavaScript.
+// Vite + React + Tailwind v4. Build the SPA homepage plus crawlable static
+// entries for high-value acquisition pages.
 export default defineConfig({
   plugins: [react(), tailwindcss(), staticJsonLd()],
   resolve: {
@@ -42,6 +42,9 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         openSource: fileURLToPath(new URL("./open-source.html", import.meta.url)),
+        engineeringPilot: fileURLToPath(
+          new URL("./engineering-pilot.html", import.meta.url),
+        ),
       },
     },
   },
