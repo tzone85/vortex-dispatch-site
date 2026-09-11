@@ -6,13 +6,13 @@ import type { CompanyProfile, NavItem } from "./types";
  */
 export const company: CompanyProfile = {
   name: "Vortex Dispatch",
-  tagline: "Commercial software, engineered to run.",
-  headline: "We build the software your business",
-  headlineAccent: "runs on.",
+  tagline: "Production software, engineered to run.",
+  headline: "Ship production software faster.",
+  headlineAccent: "Keep the engineering bar high.",
   subhead:
-    "A commercial software studio in Cape Town, South Africa. We design, build, and ship product-grade systems: marketplaces, booking platforms, compliance tooling. Then we stay to keep them running.",
+    "Vortex Dispatch is a Cape Town software engineering company that combines senior engineering with agent-orchestrated delivery across planning, implementation, code review, QA and release.",
   positioning:
-    "Not a brochure-site shop. We build the software a business operates on: clean architecture, tested by default, and interfaces your customers will trust on the first click.",
+    "We build custom software and help engineering teams prove where AI coding agents improve throughput without surrendering architecture, testing, review or human control.",
   email: "hello@vortexdispatch.co.za",
   location: "Cape Town, South Africa",
   siteUrl: "https://vortexdispatch.co.za",
@@ -20,10 +20,10 @@ export const company: CompanyProfile = {
 };
 
 export const primaryCta = {
-  label: "Start a conversation",
-  href: "#contact",
+  label: "Book an engineering pilot",
+  href: "/engineering-pilot",
   mailto: `mailto:${company.email}?subject=${encodeURIComponent(
-    "Project inquiry: Vortex Dispatch",
+    "Engineering Pilot: Vortex Dispatch",
   )}`,
 } as const;
 
@@ -35,7 +35,7 @@ export const secondaryCta = {
 export const navigation: readonly NavItem[] = [
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "work", label: "Work", href: "#work" },
-  { id: "whatsapp-sales-desk", label: "Sales desk", href: "#whatsapp-sales-desk" },
+  { id: "engineering-pilot", label: "Engineering Pilot", href: "/engineering-pilot" },
   { id: "process", label: "How we build", href: "#process" },
   { id: "contact", label: "Contact", href: "#contact" },
 ] as const;
