@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
-import { trackEngineeringPilotLead } from "../core/analytics";
+import { EngineeringPilotForm } from "../components/EngineeringPilotForm";
+import { trackPilotCtaClick } from "../core/analytics";
 
 const PILOT_STEPS = [
   {
@@ -92,12 +93,6 @@ export function EngineeringPilotPage() {
     return () => schema.remove();
   }, []);
 
-  const mailto = `mailto:hello@vortexdispatch.co.za?subject=${encodeURIComponent(
-    "Engineering Pilot: Vortex Dispatch",
-  )}&body=${encodeURIComponent(
-    "We would like to evaluate agent-orchestrated delivery on a real repository. Please send us the pilot intake details.",
-  )}`;
-
   return (
     <>
       <div className="atmosphere" aria-hidden="true" />
@@ -114,11 +109,11 @@ export function EngineeringPilotPage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href={mailto}
+              href="#pilot-form"
               className="btn-primary"
-              onClick={() => trackEngineeringPilotLead("hero")}
+              onClick={() => trackPilotCtaClick("hero")}
             >
-              Book the engineering pilot
+              Request an engineering pilot
             </a>
             <a href="/#work" className="btn-ghost">
               See what we build
@@ -199,21 +194,8 @@ export function EngineeringPilotPage() {
         </section>
 
         <section className="border-t border-line bg-void-2/50">
-          <div className="mx-auto max-w-4xl px-5 py-20 text-center sm:px-8">
-            <p className="mono-meta text-accent-bright">START WITH EVIDENCE</p>
-            <h2 className="mt-4 font-display text-4xl font-bold text-bone sm:text-5xl">
-              Bring the repository. Bring the tickets. We&apos;ll measure the rest.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-bone-muted">
-              We&apos;ll start with a short technical intake to confirm the repository, tickets, acceptance criteria and engineering controls are suitable for a meaningful pilot.
-            </p>
-            <a
-              href={mailto}
-              className="btn-primary mt-9 inline-flex"
-              onClick={() => trackEngineeringPilotLead("closing_cta")}
-            >
-              Book the engineering pilot
-            </a>
+          <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8">
+            <EngineeringPilotForm />
           </div>
         </section>
       </main>
