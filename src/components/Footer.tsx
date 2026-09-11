@@ -33,6 +33,12 @@ export function Footer() {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/open-source"
+              className="mono-meta transition-colors hover:text-accent-bright"
+            >
+              Open Source
+            </a>
           </nav>
         </div>
 
@@ -52,6 +58,12 @@ export function Footer() {
             </a>
           </p>
           <nav className="flex flex-wrap gap-x-7 gap-y-2">
+            <a
+              href="/open-source"
+              className="text-sm text-bone-muted hover:text-accent transition-colors"
+            >
+              Open Source
+            </a>
             <a
               href="/privacy"
               className="text-sm text-bone-muted hover:text-accent transition-colors"
