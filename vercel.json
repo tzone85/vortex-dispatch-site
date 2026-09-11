@@ -6,6 +6,10 @@
   "installCommand": "npm install",
   "rewrites": [
     {
+      "source": "/engineering-pilot",
+      "destination": "/engineering-pilot.html"
+    },
+    {
       "source": "/open-source",
       "destination": "/open-source.html"
     },
