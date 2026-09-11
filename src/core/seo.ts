@@ -1,76 +1,92 @@
 import { brandAssets, brandUrl } from "./brand";
 import type { CompanyProfile, FaqEntry, SeoMeta, WorkItem } from "./types";
 
-/**
- * Build the page's <title>/description/canonical from the company profile.
- * The title states the trade and the country outright - "Vortex Dispatch"
- * collides with US truck-dispatching brands, so the entity must disambiguate
- * itself in the first line machines read.
- */
+/** Build the homepage search metadata from the canonical company profile. */
 export function buildSeoMeta(c: CompanyProfile): SeoMeta {
   return {
-    title: `${c.name} | Commercial software studio in ${c.location}`,
+    title: `${c.name} | AI-Native Software Engineering & Custom Software`,
     description: c.subhead,
-    canonical: c.siteUrl,
+    canonical: `${c.siteUrl}/`,
   };
 }
 
 /**
- * Comprehensive schema.org JSON-LD for an Organization plus its shipped products.
- * Optimized for AI agents, search engines, and structured data consumers.
+ * Static schema.org entity graph for the company, its open-source VXD project,
+ * core engineering services and selected shipped software.
  */
 export function buildOrganizationJsonLd(
   c: CompanyProfile,
   work: readonly WorkItem[],
 ): Record<string, unknown> {
+  const organizationId = `${c.siteUrl}/#organization`;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": ["Organization", "ProfessionalService"],
-        "@id": `${c.siteUrl}/#organization`,
+        "@id": organizationId,
         name: c.name,
-        url: c.siteUrl,
+        url: `${c.siteUrl}/`,
         logo: brandUrl(c.siteUrl, brandAssets.logo),
         image: brandUrl(c.siteUrl, brandAssets.logo512),
         email: c.email,
-        telephone: null,
         foundingDate: String(c.foundedYear),
-        foundingLocation: c.location,
         slogan: c.tagline,
         description: c.positioning,
         disambiguatingDescription:
-          "A custom software studio in Cape Town, South Africa. Not a transport, trucking, fleet-dispatch, or TMS product. The name refers to how work is dispatched through the studio's build pipeline.",
+          "A software engineering company in Cape Town, South Africa. Vortex Dispatch builds production software and develops agent-orchestrated engineering systems. It is not a transport, trucking, fleet-dispatch or TMS business.",
         areaServed: {
-          "@type": "Place",
+          "@type": "Country",
           name: "South Africa",
-          geo: {
-            "@type": "GeoShape",
-            box: "-33.9250,18.4241,-33.9250,18.4241",
-          },
         },
         address: {
           "@type": "PostalAddress",
-          addressLocality: c.location,
+          addressLocality: "Cape Town",
+          addressRegion: "Western Cape",
           addressCountry: "ZA",
         },
         sameAs: [
           "https://github.com/tzone85",
-          "https://github.com/vortex-dispatch",
+          "https://github.com/tzone85/vortex-dispatch",
         ],
         knowsAbout: [
           "Custom Software Development",
-          "Web Application Development",
-          "Software Development",
+          "Software Architecture",
+          "AI-Native Software Engineering",
+          "AI Coding Agents",
+          "AI Agent Orchestration",
+          "Claude Code",
+          "OpenAI Codex",
+          "Gemini CLI",
+          "Code Review Automation",
+          "Software QA",
           "Marketplace Development",
           "Booking Platforms",
-          "Compliance Tools",
-          "AI Integration",
+          "Compliance Software",
           "SaaS Development",
           "React Development",
-          "Next.js Development",
           "Laravel Development",
           "Go Programming",
+        ],
+        hasService: [
+          {
+            "@type": "Service",
+            "@id": `${c.siteUrl}/#service-custom-software`,
+            name: "Custom Software Engineering",
+            serviceType: "Custom software development and production engineering",
+            provider: { "@id": organizationId },
+            areaServed: { "@type": "Country", name: "South Africa" },
+          },
+          {
+            "@type": "Service",
+            "@id": `${c.siteUrl}/#service-engineering-pilot`,
+            name: "AI Engineering Delivery Pilot",
+            url: `${c.siteUrl}/engineering-pilot`,
+            serviceType: "Agent-orchestrated software engineering evaluation",
+            provider: { "@id": organizationId },
+            areaServed: { "@type": "Country", name: "South Africa" },
+          },
         ],
         makesOffer: work
           .filter((w) => w.status === "live")
@@ -83,42 +99,30 @@ export function buildOrganizationJsonLd(
               description: w.summary,
               applicationCategory: `Business/${w.domain}`,
               url: w.href,
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "ZAR",
-                price: "custom",
-              },
             },
           })),
-        hasService: [
-          {
-            "@type": "LocalBusiness",
-            name: "Software Development",
-            description: "Custom software development and engineering",
-            areaServed: "ZA",
-          },
-          {
-            "@type": "LocalBusiness",
-            name: "Technical Consulting",
-            description: "Software architecture and technical strategy",
-            areaServed: "ZA",
-          },
-        ],
       },
       {
         "@type": "WebSite",
         "@id": `${c.siteUrl}/#website`,
-        url: c.siteUrl,
+        url: `${c.siteUrl}/`,
         name: c.name,
         description: c.positioning,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${c.siteUrl}/?s={search_term_string}`,
-          },
-          query: "required",
-        },
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${c.siteUrl}/#vxd`,
+        name: "VXD",
+        alternateName: "Vortex Dispatch",
+        description:
+          "Open-source AI coding-agent orchestration for planning, isolated implementation, code review, QA, recovery and delivery workflows.",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "macOS, Linux, Windows via WSL2",
+        codeRepository: "https://github.com/tzone85/vortex-dispatch",
+        license: "https://www.apache.org/licenses/LICENSE-2.0",
+        url: `${c.siteUrl}/open-source`,
+        creator: { "@id": organizationId },
       },
       ...work
         .filter((w) => w.status === "live" && w.href)
@@ -130,10 +134,7 @@ export function buildOrganizationJsonLd(
           url: w.href,
           applicationCategory: `Business/${w.domain}`,
           operatingSystem: "Web",
-          provider: {
-            "@type": "Organization",
-            "@id": `${c.siteUrl}/#organization`,
-          },
+          provider: { "@id": organizationId },
           releaseDate: `${w.year}-01-01`,
         })),
     ],
@@ -160,9 +161,7 @@ export function buildFaqJsonLd(
 
 /**
  * Inject JSON-LD blocks into an HTML document, immediately before </head>.
- * Used by the Vite build so structured data ships in the static HTML -
- * most AI crawlers never execute JavaScript, so client-side injection alone
- * is invisible to them.
+ * Used by the Vite build so structured data ships in the static HTML.
  */
 export function injectJsonLdIntoHtml(
   html: string,
