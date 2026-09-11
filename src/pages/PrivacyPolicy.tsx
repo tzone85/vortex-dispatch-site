@@ -11,80 +11,88 @@ export function PrivacyPolicy() {
       <main className="min-h-screen bg-void text-bone">
         <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-8 text-accent">Privacy Policy</h1>
-          <div className="space-y-6">
+          <div className="space-y-6 text-bone-muted leading-7">
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">1. Introduction</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">1. About this policy</h2>
               <p>
-                Vortex Dispatch ("we", "our", or "us") operates the vortexdispatch.com website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our website and the choices you have associated with that data.
+                This policy explains how Vortex Dispatch handles personal information submitted through <strong>vortexdispatch.co.za</strong> and information generated when people use the website.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">2. Information Collection and Use</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">2. Information you provide</h2>
               <p>
-                We collect several different types of information for various purposes to provide and improve our service to you.
+                If you request an Engineering Pilot or contact us, we may collect the information you choose to provide, such as your name, work email address, company, role, technology or repository context, pilot objectives and additional message content.
               </p>
+              <p className="mt-4">
+                The Engineering Pilot form is not intended for source code, passwords, API keys, customer records or other confidential production data. Please do not submit secrets through the website form.
+              </p>
+            </section>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-accent">Types of Data Collected:</h3>
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">3. Website and attribution data</h2>
+              <p>
+                We may process ordinary technical request data needed to deliver and secure the website. When available, we also preserve campaign attribution associated with a pilot enquiry, such as UTM parameters, the referring page and the landing page, so that we can understand how the enquiry reached us.
+              </p>
+              <p className="mt-4">
+                Google Analytics is configured with Consent Mode. Analytics storage is denied by default until you allow analytics. When analytics storage is denied, Google Analytics may still receive limited cookieless measurement signals under Consent Mode. See our <a className="text-accent-bright underline" href="/cookies">Cookie Policy</a> for more detail.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">4. How we use information</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Personal Data:</strong> While using our website, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). This may include:
-                  <ul className="list-disc pl-6 mt-2 space-y-1">
-                    <li>Email address</li>
-                    <li>First name and last name</li>
-                    <li>Phone number</li>
-                    <li>Address, State, Province, ZIP/Postal code, City</li>
-                    <li>Cookies and Usage Data</li>
-                  </ul>
-                </li>
-                <li><strong>Usage Data:</strong> We may also collect information on how the website is accessed and used ("Usage Data"). This may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages you visit, the time and date of your visit, the time spent on those pages, and other diagnostic data.</li>
+                <li>To respond to enquiries and evaluate whether a proposed Engineering Pilot is suitable.</li>
+                <li>To communicate about requested software engineering services.</li>
+                <li>To understand which pages, campaigns and acquisition channels are useful.</li>
+                <li>To operate, protect and improve the website and its services.</li>
+                <li>To meet legal, security and fraud-prevention obligations where applicable.</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">3. Use of Data</h2>
-              <p>Vortex Dispatch uses the collected data for various purposes:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>To provide and maintain our website</li>
-                <li>To notify you about changes to our website</li>
-                <li>To provide customer care and support</li>
-                <li>To gather analysis or valuable information so that we can improve our website</li>
-                <li>To monitor the usage of our website</li>
-                <li>To detect, prevent and address technical and security issues</li>
-                <li>To respond to your inquiries and provide customer support</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">4. Security of Data</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">5. Service providers</h2>
               <p>
-                The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+                We use service providers to operate the website and process requests. These may include Vercel for hosting, Google Analytics for website measurement where permitted by your consent choice, and Resend for delivery of Engineering Pilot enquiry emails. Those providers process information under their own terms and privacy arrangements.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">5. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">6. Retention and security</h2>
               <p>
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the bottom of this Privacy Policy.
+                We keep personal information only for as long as reasonably necessary for the purpose for which it was collected, including responding to an enquiry, managing a business relationship and meeting applicable legal or security requirements. We use reasonable technical and organisational safeguards, but no Internet transmission or storage system can be guaranteed to be completely secure.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">6. Contact Us</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">7. International processing</h2>
               <p>
-                If you have any questions about this Privacy Policy, please contact us using the contact information provided on our website.
+                Some infrastructure and service providers may process information outside South Africa. Where applicable, we take reasonable steps to use providers and arrangements that support appropriate protection of personal information.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-accent">7. Compliance with POPIA</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">8. Your rights</h2>
               <p>
-                We comply with the Protection of Personal Information Act (POPIA) of South Africa. Your personal information is processed in accordance with POPIA requirements and your rights as a data subject.
+                Depending on the law that applies to you, you may have rights to request access to personal information we hold about you, ask for correction or deletion, object to certain processing, or withdraw consent where processing relies on consent. South African data subjects may have rights under the Protection of Personal Information Act (POPIA).
               </p>
             </section>
 
-            <p className="text-sm text-accent/70 mt-8">
-              Last updated: {new Date().toLocaleDateString('en-ZA')}
-            </p>
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">9. Contact</h2>
+              <p>
+                Privacy questions or requests can be sent to <a className="text-accent-bright underline" href="mailto:hello@vortexdispatch.co.za">hello@vortexdispatch.co.za</a>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-accent">10. Changes to this policy</h2>
+              <p>
+                We may update this policy when our services, providers or legal obligations change. The current revision date appears below.
+              </p>
+            </section>
+
+            <p className="text-sm text-accent/70 mt-8">Last updated: 11 September 2026</p>
           </div>
         </div>
       </main>
