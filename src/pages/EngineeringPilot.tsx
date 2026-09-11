@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { trackEngineeringPilotLead } from "../core/analytics";
 
 const PILOT_STEPS = [
   {
@@ -112,7 +113,11 @@ export function EngineeringPilotPage() {
             A focused evaluation on one real repository. We use your backlog, your codebase and your existing engineering checks, then measure what happened instead of asking you to believe another AI productivity slide deck.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href={mailto} className="btn-primary">
+            <a
+              href={mailto}
+              className="btn-primary"
+              onClick={() => trackEngineeringPilotLead("hero")}
+            >
               Book the engineering pilot
             </a>
             <a href="/#work" className="btn-ghost">
@@ -202,7 +207,11 @@ export function EngineeringPilotPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-bone-muted">
               We&apos;ll start with a short technical intake to confirm the repository, tickets, acceptance criteria and engineering controls are suitable for a meaningful pilot.
             </p>
-            <a href={mailto} className="btn-primary mt-9 inline-flex">
+            <a
+              href={mailto}
+              className="btn-primary mt-9 inline-flex"
+              onClick={() => trackEngineeringPilotLead("closing_cta")}
+            >
               Book the engineering pilot
             </a>
           </div>
