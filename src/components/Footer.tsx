@@ -2,6 +2,9 @@ import { brandAssets, company, navigation } from "@/core";
 
 /** Footer. Signature credit is deliberately lowercase, per brand. */
 export function Footer() {
+  const footerHref = (href: string) =>
+    href.startsWith("/") ? href : `/${href}`;
+
   return (
     <footer className="border-t border-line bg-void-2/60">
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
@@ -27,7 +30,7 @@ export function Footer() {
             {navigation.map((item) => (
               <a
                 key={item.id}
-                href={item.href}
+                href={footerHref(item.href)}
                 className="mono-meta transition-colors hover:text-accent-bright"
               >
                 {item.label}
@@ -58,6 +61,12 @@ export function Footer() {
             </a>
           </p>
           <nav className="flex flex-wrap gap-x-7 gap-y-2">
+            <a
+              href="/engineering-pilot"
+              className="text-sm text-bone-muted hover:text-accent transition-colors"
+            >
+              Engineering Pilot
+            </a>
             <a
               href="/open-source"
               className="text-sm text-bone-muted hover:text-accent transition-colors"
