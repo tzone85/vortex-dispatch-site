@@ -17,6 +17,7 @@ import { RevenueLeakOffer } from "./components/RevenueLeakOffer";
 import { WhatsAppSalesDesk } from "./components/WhatsAppSalesDesk";
 import { WhatsAppSalesDeskPage } from "./pages/WhatsAppSalesDesk";
 import { OpenSourcePage } from "./pages/OpenSource";
+import { EngineeringPilotPage } from "./pages/EngineeringPilot";
 
 function HomePage() {
   return (
@@ -54,6 +55,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/engineering-pilot" element={<EngineeringPilotPage />} />
       <Route path="/open-source" element={<OpenSourcePage />} />
       <Route path="/terms" element={<TermsAndConditions />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
