@@ -15,13 +15,26 @@
     <meta property="og:url" content="https://vortexdispatch.co.za/open-source" />
     <meta property="og:image" content="https://vortexdispatch.co.za/brand/og-card.png" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56NMRETY0W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      var analyticsConsent = null;
+      try {
+        analyticsConsent = localStorage.getItem('vortex_analytics_consent_v1');
+      } catch (e) {
+        analyticsConsent = null;
+      }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: analyticsConsent === 'granted' ? 'granted' : 'denied',
+        wait_for_update: 500
+      });
       gtag('js', new Date());
       gtag('config', 'G-56NMRETY0W');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56NMRETY0W"></script>
 
     <script type="application/ld+json">
       {
