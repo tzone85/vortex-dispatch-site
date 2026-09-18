@@ -36,6 +36,7 @@ export type WorkDomain =
   | "booking"
   | "compliance"
   | "fintech"
+  | "education"
   | "consumer"
   | "wellness"
   | "ai-delivery";

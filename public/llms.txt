@@ -80,7 +80,7 @@ The public and private systems do not need feature parity. VXD is intended to re
 - Mini Suites: booking platform for a short-stay rental business
 - ShiftSavvy: same-shift staffing marketplace for restaurants
 - FoundersDesk: company document and compliance product
-- ReturnReady: SARS filing-season co-pilot
+- Inkwenkwezi: CAPS study companion for Grades 8 to 12, with 747 topics and narrated mini-lessons
 - SpeedReading: interactive speed-reading trainer
 - Sovereign Breath: offline-first breathwork PWA
 

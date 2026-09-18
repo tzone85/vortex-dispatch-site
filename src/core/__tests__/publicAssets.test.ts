@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { fileURLToPath, URL } from "node:url";
+import { work } from "../work";
 
 /**
  * Guards the crawler-facing files in public/. These are what AI engines see
@@ -37,7 +38,9 @@ describe("public/robots.txt", () => {
   });
 
   it("still points at the sitemap", () => {
-    expect(robots).toContain("Sitemap: https://vortexdispatch.co.za/sitemap.xml");
+    expect(robots).toContain(
+      "Sitemap: https://vortexdispatch.co.za/sitemap.xml",
+    );
   });
 });
 
@@ -61,5 +64,27 @@ describe("public/llms.txt", () => {
   it("links the live portfolio", () => {
     expect(llms).toContain("https://minisuites.co.za");
     expect(llms).toContain("https://foundersdesk.co.za");
+  });
+
+  it("names every work item, so the crawler view matches the site", () => {
+    for (const w of work) expect(llms).toContain(w.name);
+  });
+
+  it("drops retired work", () => {
+    expect(llms.toLowerCase()).not.toContain("returnready");
+  });
+});
+
+describe("public/metadata.json", () => {
+  const metadata = readPublic("metadata.json");
+
+  it("links every live work item", () => {
+    for (const w of work) {
+      if (w.href) expect(metadata).toContain(w.href);
+    }
+  });
+
+  it("drops retired work", () => {
+    expect(metadata.toLowerCase()).not.toContain("returnready");
   });
 });

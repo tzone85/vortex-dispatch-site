@@ -45,17 +45,17 @@ export const work: readonly WorkItem[] = [
     href: "https://foundersdesk.co.za",
   },
   {
-    id: "returnready",
-    name: "ReturnReady",
-    domain: "fintech",
+    id: "inkwenkwezi",
+    name: "Inkwenkwezi",
+    domain: "education",
     year: 2026,
     summary:
-      "A filing-season co-pilot for SARS tax returns: a client-side rules engine that walks people through their submission, privately.",
+      "A CAPS study companion for Grades 8 to 12, named for the isiXhosa morning star: every topic gets theory, worked examples, flashcards, a quiz and a narrated mini-lesson. Pick a grade and watch a lesson play.",
     proof:
-      "Ships with 70 automated tests; the SARS tax rules engine holds 100% unit coverage and runs entirely in the browser. No return data leaves the device.",
-    stack: ["React", "Vite", "Rules engine"],
+      "Live on inkwenkwezi.playfulskills.co.za with 747 topics across 71 subject blocks and 3,310 narrated clips, isiXhosa Home Language included. Keeps working offline.",
+    stack: ["React", "Vite", "Canvas scenes"],
     status: "live",
-    href: "https://returnready-black.vercel.app",
+    href: "https://inkwenkwezi.playfulskills.co.za",
   },
   {
     id: "speedreading",

@@ -106,14 +106,14 @@
       "stack": ["React", "Vite", "Next.js"]
     },
     {
-      "id": "returnready",
-      "name": "ReturnReady",
-      "domain": "fintech",
+      "id": "inkwenkwezi",
+      "name": "Inkwenkwezi",
+      "domain": "education",
       "year": 2026,
-      "description": "A filing-season co-pilot for SARS tax returns: a client-side rules engine that walks people through their submission, privately.",
+      "description": "A CAPS study companion for Grades 8 to 12, named for the isiXhosa morning star: every topic gets theory, worked examples, flashcards, a quiz and a narrated mini-lesson.",
       "status": "live",
-      "url": "https://returnready-black.vercel.app",
-      "stack": ["React", "Vite", "Rules engine"]
+      "url": "https://inkwenkwezi.playfulskills.co.za",
+      "stack": ["React", "Vite", "Canvas scenes"]
     },
     {
       "id": "speedreading",
@@ -124,6 +124,16 @@
       "status": "live",
       "url": "https://speedreading.playfulskills.co.za",
       "stack": ["React", "Vite", "Psychology-based"]
+    },
+    {
+      "id": "sovereign-breath",
+      "name": "Sovereign Breath",
+      "domain": "wellness",
+      "year": 2026,
+      "description": "A breathwork PWA: guided breathing patterns, a streak that forgives, and private circles that turn five minutes a day into a shared practice.",
+      "status": "live",
+      "url": "https://breath.playfulskills.co.za",
+      "stack": ["React", "Vite", "Offline-first PWA"]
     }
   ],
   "pages": [

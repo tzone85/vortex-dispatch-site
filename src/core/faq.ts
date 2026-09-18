@@ -19,7 +19,7 @@ export const faq: readonly FaqEntry[] = [
     intent: "service-navigation",
     question: "What does Vortex Dispatch build?",
     answer:
-      "Customer-facing platforms and the operational software behind them: booking systems with payments (like Mini Suites), staffing marketplaces (like ShiftSavvy), compliance and document products (like FoundersDesk), and client-side rules engines (like ReturnReady). Every build ships with automated tests and clean, documented architecture.",
+      "Customer-facing platforms and the operational software behind them: booking systems with payments (like Mini Suites), staffing marketplaces (like ShiftSavvy), compliance and document products (like FoundersDesk), and education platforms (like Inkwenkwezi). Every build ships with automated tests and clean, documented architecture.",
   },
   {
     id: "studio-vs-agency",

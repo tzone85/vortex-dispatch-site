@@ -71,6 +71,18 @@ describe("selected work", () => {
       if (w.href) expect(w.href.startsWith("https://")).toBe(true);
     }
   });
+
+  it("showcases Inkwenkwezi as the education entry, linked to production", () => {
+    const item = work.find((w) => w.id === "inkwenkwezi");
+    expect(item?.name).toBe("Inkwenkwezi");
+    expect(item?.domain).toBe("education");
+    expect(item?.status).toBe("live");
+    expect(item?.href).toBe("https://inkwenkwezi.playfulskills.co.za");
+  });
+
+  it("no longer lists ReturnReady", () => {
+    expect(work.some((w) => w.id === "returnready")).toBe(false);
+  });
 });
 
 describe("build pipeline", () => {
@@ -80,7 +92,10 @@ describe("build pipeline", () => {
   });
 
   it("names TDD somewhere in the flow (it is the point of the studio)", () => {
-    const joined = pipeline.map((s) => `${s.title} ${s.detail}`).join(" ").toLowerCase();
+    const joined = pipeline
+      .map((s) => `${s.title} ${s.detail}`)
+      .join(" ")
+      .toLowerCase();
     expect(joined).toMatch(/test|tdd/);
   });
 });
